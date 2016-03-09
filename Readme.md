@@ -2,7 +2,7 @@
 This is a simple step by step tutorial about Clojure Webdevelopment.
 
 ## Contents
-Instead of firing big frameworks towards our project we will go mostly step by step through the basics of webdevelopment. I will stick to the order i learned PHP in past, and will possible include some sample projects later.
+Instead of firing big frameworks towards our project we will go mostly step by step through the basics of webdevelopment. I will stick to the order I learned PHP in past and will possible include some sample projects later.
 This tutorial contains the following topics:
 - [x] [Tutorial 1 - Basics about **Ring** and Requests](/tutorial1/)
 - [ ] [Tutorial 2 - Prerequirements, **LightTable** setup and creating a simple **hands-on** project](/tutorial2/)
