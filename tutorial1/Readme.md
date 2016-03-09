@@ -1,12 +1,12 @@
 # Tutorial 1 - Basics about **Ring** and Requests
 This tutorial is about understanding the Ring workflow used by clojure webapps and the requests/responses flow in the Ring.
 
-[TOC]
+[[toc]]
 
 ## Ring
 The following picture shows how the layout of Ring which describes the dataflow of webapps. On the right side the flow of requests (client to server) are depicted in green color. At the opposite side the response (server to client) are drawn in a blue color.
 
-![Sketch of Ring](\img\ring.png)
+![Sketch of Ring](/img/ring.png)
 
 The dataflow over network (HTTP) will not be described here (this should be clear or documented at wikipedia for further reading).
 More information about RING can be found at [the Ring SPECs page](https://github.com/ring-clojure/ring/blob/master/SPEC).
