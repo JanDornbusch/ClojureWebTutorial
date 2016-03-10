@@ -32,7 +32,7 @@ Adding markdown to files not associated by default.
 ; File -> Settings -> User behaviors
 ; add the following block of code this will mark files with ending .clj.txt
 ; as clojure files (this is an example because I used a file like this to
-; collect the content of tutorials before i decided to prepare it as .md and
+; collect the content of tutorials before I decided to prepare it as .md and
 ; publish them here.
 
  [:files :lt.objs.files/file-types [{:exts [:clj.txt],
