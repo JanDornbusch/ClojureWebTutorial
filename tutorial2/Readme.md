@@ -1,7 +1,10 @@
 # Tutorial 2 - Prerequirements and creating a simple **hands-on** project
 In this tutorial we will go through the required software to start programming Clojure4Web and let lein create a basic project to us.
 
-[TOC]
+- [Lein](#lein)
+- [Lighttable](#lighttable)
+- [First project](#first-project)
+- [ClojureScript Tutorials for LightTable](#clojurescript-tutorials-for-lighttable)
 
 ## Lein
 For now we will use the [Lein tool to build](http://leiningen.org/) our projects. You can find it here: [http://leiningen.org/#install](http://leiningen.org/#install).
@@ -113,7 +116,7 @@ Normally you do not have to reload the code and restart the server, it will auto
 
 In case of "missing" errors you probably misspelled a line at project.clj or used a wrong version number not published by the author of the library.
 
-## ClojureScript Tutorials (for LightTable)
+## ClojureScript Tutorials for LightTable
 For a little tutorial on ClojureScript see [https://github.com/swannodette/lt-cljs-tutorial](https://github.com/swannodette/lt-cljs-tutorial).
 
 Generally you could be interested in [https://clojuredocs.org/core-library](https://clojuredocs.org/core-library) where all functions are documentated with examples.
