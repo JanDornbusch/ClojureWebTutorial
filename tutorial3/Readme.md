@@ -1,7 +1,21 @@
 # Tutorial 3 - Folder structure, play with **compojure** and **hiccup**
 In this tutorial we will have a look at compojure as routing library and hiccup as html generator.
 
-[TOC]
+- [Folder structure](#folder-structure)
+- [Compojure](#Compojure)
+    - [Clojure Destructuring](#clojure-destructuring)
+    - [Compojure Destructuring](#compojure-destructuring)
+        - [Subroutes](#subroutes)
+        - [Matching request methods](#matching-request-methods)
+        - [RegEx](#regex)
+- [Hiccup](#hiccup)
+    - [Start the server](#start-the-server)
+    - [Syntax](#syntax)
+        - [Simple elements](#simple-elements)
+        - [CSS](#css)
+        - [Seqs](#seqs)
+    - [Optimisation](#optimisation)
+    - [Conversion HTML to Hiccup](#conversion-html-to-hiccup)
 
 ## Folder structure
 What does the newly created folder structure looks like? And what is the logic behind?
@@ -193,7 +207,7 @@ To play more go to `src\ testapp\ routes\ home.clj line:6`
 
 You can use this example or just play a little at this point.
 
-#### Start the server
+### Start the server
 To see results of your changes you need to start the server `src\ testapp\  repl.clj` and add `(start-server) ` at the end of this file. (Remove it after testing, we will place it in another file later). Place the cursor behin the last `) ` of start-server call and hit `ctrl+enter` to evaluate the expression. It now will take a moment to retrieve all dependencies and start the repl. Then your browser will open and show this page.
 
 ### Syntax
