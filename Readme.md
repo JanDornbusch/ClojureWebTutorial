@@ -7,7 +7,7 @@ This tutorial contains the following topics:
 - [x] [Tutorial 1 - Basics about **Ring** and Requests](/tutorial1/)
 - [x] [Tutorial 2 - Prerequirements, **LightTable** setup and creating a simple **hands-on** project](/tutorial2/)
 - [x] [Tutorial 3 - Folder structure, **compojure** and **hiccup**](/tutorial3/)
-- [ ] [Tutorial 4 - Creating a **HTML form and data structure** used by guestbooks](/tutorial4/)
+- [x] [Tutorial 4 - Creating a **HTML form and data structure** used by guestbooks](/tutorial4/)
 - [ ] Tutorial  - Attach a simple **SQLite-Database** to store and read records
 - [ ] Tutorial  - Style the guestbook with **CSS**
 - [ ] Tutorial  - Adding **tests** to the project

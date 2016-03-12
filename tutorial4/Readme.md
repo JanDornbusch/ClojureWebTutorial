@@ -1,7 +1,18 @@
 # Tutorial 4 - Creating a **HTML form and data structure** used by guestbooks
 Within this tutorial we will create a simple form used by guestbooks. I thought a long time about this step and if it would be better to start with a chat layout to be used later with websockets. But in case of training we will create this later.
 
-[TOC]
+- [Functions required](#functions-required)
+- [Startup the Server](#startup-the-server)
+    - [Instarepl](#instarepl)
+    - [Evaluation](#evaluation)
+    - [Run it!](#run-it!)
+- [Creating functions](#creating-functions)
+    - [requires](#requires)
+    - [list-entries](#list-entries)
+    - [show-guestbook](#show-guestbook)
+    - [save-new-message](#save-new-message)
+    - [defroutes](#defroutes)
+    - [Try it](#try-it)
 
 ## Functions required
 We will need 3 different functions.
