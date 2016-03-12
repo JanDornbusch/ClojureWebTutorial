@@ -5,7 +5,7 @@ Within this tutorial we will create a simple form used by guestbooks. I thought 
 - [Startup the Server](#startup-the-server)
     - [Instarepl](#instarepl)
     - [Evaluation](#evaluation)
-    - [Run it!](#run-it!)
+    - [Run it](#run-it)
 - [Creating functions](#creating-functions)
     - [requires](#requires)
     - [list-entries](#list-entries)
@@ -41,7 +41,7 @@ The above mentioned methode can be usefull but an automatic server start loop wo
 1. To evaluate blocks use `Cmd/Ctrl+Enter ` by default
 2. and in case you want to evaluate an entire file, this is bound to `Cmd/Ctrl+Shift+Enter `.
 
-### Run it!
+### Run it
 To run the server use the `startup.clj ` file and evaluate both lines. If you forget to load the namespace with the first line you will get an exception
 ```clojure
 clojure.lang.Compiler$CompilerException: java.lang.RuntimeException: Unable to resolve symbol: start-server in this context, compiling:(C:\Users\admin\OneDrive\Dokumente\ClojureWebTutorial\tutorial4\testapp\startup.clj:2:1)
