@@ -254,7 +254,7 @@ Within this function we will have to provide the data of database to the for loo
 ```
 
 ### save-new-message
-At this function we will remove the debug println and replace it by
+At this function we will remove the debug println we just let there last tutorial and replace it by this line:
 ```clojure
 (db/save-entry! guest_name message)
 ```
@@ -287,7 +287,7 @@ At this function we will remove the debug println and replace it by
     ;; the same name
     (form-to [:post "/"]
       [:p "Name"]
-      (text-field "name" guest_name)
+      (text-field "guest_name" guest_name)
       [:p "Message"]
       (text-area {:rows 10 :cols 40} "message" message)
       [:br]
@@ -310,7 +310,7 @@ At this function we will remove the debug println and replace it by
 
 (defroutes home-routes
   (GET "/" [] (show-guestbook))
-  (POST "/" [name message] (save-new-message guest_name message)))
+  (POST "/" [guest_name message] (save-new-message guest_name message)))
 ```
 
 ## Changes to application startup
