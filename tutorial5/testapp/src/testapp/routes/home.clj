@@ -4,6 +4,11 @@
             [hiccup.form :refer :all]
             [testapp.models.guestbook :as db]))
 
+(defn format-time [timestamp]
+  (-> "dd/MM/yyyy"
+      (java.text.SimpleDateFormat.)
+      (.format timestamp)))
+
 (defn list-entries []
   [:ul
     (for [{:keys [message guest_name timestamp]} (db/read-entries)]
