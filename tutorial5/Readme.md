@@ -130,6 +130,7 @@ To create Tables within our db.sq3 SQLite-File:
 
 #### In-Depth-Explain-1
 We will need a table(relation) looking like this:
+
 |Field|Type|Reason|Remarks|
 |---|---|---|---|
 |id|Integer|Index(obsolete)|Better use natural indexes! Autoincrement counts the id up by one each time a new row is inserted.|
@@ -147,11 +148,12 @@ Do not name fields(attributes) like keywords the database understands.
 A good rule would be to use the table name as suffix to all fields(attributes).
 
 Example of data structure
+
 |id(Obsolete)|timestamp|gname|message|
 |---|---|---|---|
 |1|1457966538|Alice|Hi, I am Alice!|
-|1|1457966548|Bob|Bob sends a message to Alice|
-|1|1457966558|Charlie|Charlie is the evil who tries to steal this message|
+|2|1457966548|Bob|Bob sends a message to Alice|
+|3|1457966558|Charlie|Charlie is the evil who tries to steal this message|
 
 ### Read-Entries
 Now we define a function to read all entries out of the database. Corresponding to the documentation this function returns a fully-realized sequence of rows.
