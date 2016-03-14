@@ -3,7 +3,28 @@ Within this tutorial we will update the project dependencies and create all need
 
 !Attention I renamed all variables named "name" to "guest_name" to prevent violatins with clojures name function - even if it would be possible to do so, please do not! This is ugly and bad code style!
 
-[TOC]
+- [Project dependencies](#project-dependencies)
+- [Database functions](#database-functions)
+	- [Namespace](#namespace)
+	- [Databaseconnection](#databaseconnection)
+	- [Table creation script](#table-creation-script)
+		- [In-Depth-Explain-1](#in-depth-explain-1)
+	- [Read-Entries](#read-entries)
+		- [In-Depth-Explain-2](#in-depth-explain-2)
+	- [Save-Entrie!](#save-entrie)
+		- [In-Depth-Explain-3](#in-depth-explain-3)
+	- [Full File 1](#full-file-1)
+	- [MySQL](#mysql)
+- [Changes to our guestbook functions](#changes-to-our-guestbook-functions)
+	- [Requires and format-time](#requires-and-format-time)
+	- [list-entries](#list-entries)
+	- [save-new-message](#save-new-message)
+	- [Full File 2](#full-file-2)
+- [Changes to application startup](#changes-to-application-startup)
+	- [Requires](#requires)
+	- [Init](#init)
+	- [Import](#import)
+	- [Full File 3](#full-file-3)
 
 ## Project dependencies
 File: `testapp\ project.clj `.
