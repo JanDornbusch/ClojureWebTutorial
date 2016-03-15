@@ -183,7 +183,7 @@ And finally we need a function to save new entries within the corresponding tabl
 ```
 
 #### In-Depth-Explain-3
-This function will write the (name, message and timestamp (java.util.Date resolution is seconds)) into the fields (gname, message and timestamp) of our guestbook table within the database specified in "db". Rethink the use of java.util.Date with information given in [In-Depth-Explain-1](in-depth-explain-1).
+This function will write the (name, message and timestamp (java.util.Date resolution is seconds)) into the fields (gname, message and timestamp) of our guestbook table within the database specified in "db". Rethink the use of java.util.Date with information given in [In-Depth-Explain-1](#in-depth-explain-1).
 
 ### Full File 1
 
@@ -331,6 +331,10 @@ After printing we will add our check of database
     (do (println "creating database")
         (db/create-guestbook-table))))
 ```
+
+This will check if the file `./db.sq3 ` exists and create it with the structure of our guestbook table defined in `create-guestbook-table `.
+It is not the best way to do this. A better check would be to test query the db and in case of fail create it. 
+Maybe a test of all tables inside this file and creation of missing one will be a good idea later too.
 
 ### Import
 File: `testapp\ src\ testapp\ models\ guestbook.clj `.
