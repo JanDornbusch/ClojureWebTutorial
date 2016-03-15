@@ -282,7 +282,7 @@ At this function we will remove the debug println we just let there last tutoria
     [:h1 "Guestbook"]
     [:p "Welcome to my guestbook"]
     [:p error]
-    ;; here we create a form with text fields called "name" and "message"
+    ;; here we create a form with text fields called "guest_name" and "message"
     ;; these will be sent when the form posts to the server as keywords of
     ;; the same name
     (form-to [:post "/"]
