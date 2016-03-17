@@ -1,5 +1,10 @@
 # Clojure Web Tutorial
 This is a simple step by step tutorial about Clojure Webdevelopment.
+![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/cc-zero.png)
+
+This is currently not a begin at 0 tutorial. If you need basic infomation have a look at:
+- [Are You Ready for a Programming Adventure?](http://www.braveclojure.com/)
+- [SELFHTML](https://wiki.selfhtml.org/)
 
 ## Contents
 Instead of firing big frameworks towards our project we will go mostly step by step through the basics of webdevelopment. I will stick to the order I learned PHP in past and will possible include some sample projects later.
@@ -9,7 +14,8 @@ This tutorial contains the following topics:
 - [x] [Tutorial 3 - Folder structure, **compojure** and **hiccup**](/tutorial3/)
 - [x] [Tutorial 4 - Creating a **HTML form and data structure** used by guestbooks](/tutorial4/)
 - [x] [Tutorial 5 - Attach a simple **SQLite-Database** to store and read records](/tutorial5/)
-- [ ] Tutorial  - Style the guestbook with **CSS**
+- [x] [Tutorial 6 - Programming **CSS**, a few words about **optimisation**, **Wrap-Reload** and **Wrap-Refresh**](/tutorial6/)
+- [ ] [Tutorial 7 - Style the guestbook with **CSS**](/tutorial7/)
 - [ ] Tutorial  - Adding **tests** to the project
 - [ ] Tutorial  - Debugging projects with some simple **logging** to console
 - [ ] Tutorial  - Playing with **URL Parameters**
@@ -23,11 +29,11 @@ This tutorial contains the following topics:
 - [ ] To be continued
 - [ ] Buddie or Friend, React/Goog?, Stacktrace...
 
-## Suggestions?
-Please let me know if you are missing anything, if there are security holes, or other improvements I forgot to mention/include.
-
 ## Questions?
 In case you are missing information or do not understand what I tried to express let me know and I will see if I can change it or add them within this tutorial.
 
+## Suggestions / Contribution?
+Please let me know if you are missing anything, if there are security holes, or other improvements I forgot to mention/include. Feel free to help me to improve this tutorial.
+
 ## ToDo
-To be listed here.
+- To be listed here. ;-)
