@@ -1,7 +1,16 @@
 #Tutorial 6 - Programming **CSS**, a few words about **optimisation**, **Wrap-Reload** and **Wrap-Refresh**
 Next on our list is to start with CSS. But we will first have a little look on optimisation which we should have in mind when start using CSS.
 
-[TOC]
+- [Optimisation](#optimisation)
+	- [Useful links](#useful-links)
+	- [Accessibility and Usability](#accessibility-and-usability)
+- [Wrap-Reload](#wrap-reload)
+- [Wrap-Refresh](#wrap-refresh)
+- [CSS Garden](#css-garden])
+	- [Compiling CSS](#compiling-css)
+	- [Test it!](#test-it)
+	- [Anti cache work around](#anti-cache-work-around)
+	- [Stop the compiler](#stop-the-compiler)
 
 ## Optimisation
 
