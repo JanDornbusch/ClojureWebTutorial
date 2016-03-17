@@ -2,7 +2,7 @@
 This is a simple step by step tutorial about Clojure Webdevelopment.
 ![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/cc-zero.png)
 
-This is currently not a begining at 0 tutorial. If you need basic infomation have a look at:
+This is currently not a beginning at 0 tutorial. If you need basic infomation have a look at:
 - [Are You Ready for a Programming Adventure?](http://www.braveclojure.com/)
 - [SELFHTML](https://wiki.selfhtml.org/)
 
