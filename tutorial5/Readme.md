@@ -25,6 +25,7 @@ Within this tutorial we will update the project dependencies and create all need
 	- [Init](#init)
 	- [Import](#import)
 	- [Full File 3](#full-file-3)
+- [Security](#security)
 
 ## Project dependencies
 File: `testapp\ project.clj `.
@@ -381,3 +382,17 @@ If you want to import our 3 sample messages go into the model file, paste and ru
       (wrap-base-url)))
 
 ```
+
+## Security
+Normally you would have to care about user inputs which could damage your database or hijack the page.
+The Library we used to create the SQL connections does parameterisation to us.
+But you still can bring special chars into our page, try to send this message into our guestbook:
+
+```javascript
+<script>
+alert("Hello! I am an evil alert box!");
+</script>
+```
+
+And you will see how all time you visit the page this alert pops up!
+Later in security tutorial when talk about attacks I will explain how to avoid it!
