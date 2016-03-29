@@ -1,15 +1,15 @@
 #Tutorial 7 - Style the guestbook with **CSS**
 This tutorial will help you to gather some practise in CSS. (Server side validation, client side we will add within next tutorial).
 
-- [Changes to HTML](#changes-to HTML)
-- [Changing project setup](#changing-project setup)
+- [Changes to HTML](#changes-to-html)
+- [Changing project setup](#changing-project-setup)
 - [Changing HTML](#changing-html)
-    - [Knowledgebase](#Knowledgebase)
+    - [Knowledgebase](#knowledgebase)
 - [Adding CSS](#adding-css)
     - [Merging styles](#merging-styles)
-    - [Special CSS - background-image: url(...)](#special-css - background-image: url...))
-    - [Special CSS - double attributes](#special-css - double attributes)
-    - [Special CSS - cascading and vectors](#special-css - cascading and vectors)
+    - [Special CSS - background-image: url(...)](#special-css---background-image-url)
+    - [Special CSS - double attributes](#special-css---double attributes)
+    - [Special CSS - cascading and vectors](#special-css---cascading-and-vectors)
     - [Additional infos](#additional-infos)
     - [Full file](#full-file)
 
@@ -68,9 +68,9 @@ File `testapp\ project.clj `. We will add compiler information to garden.
 
 ```
 
-With this code all occurances of `box-shadow ` will become to:
+With this code all occurances of `box-shadow ` will become:
 
-```css
+```CSS
 // source: :box-shadow [[0 (px 0) (px 10) "rgba(0, 0, 0, 0.3)"]]
   box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: 0 0px 10px rgba(0, 0, 0, 0.3);
