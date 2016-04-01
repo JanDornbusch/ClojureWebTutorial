@@ -5,6 +5,7 @@ This is a simple step by step tutorial about Clojure Webdevelopment.
 This is currently not a beginning at 0 tutorial. If you need basic infomation have a look at:
 - [Are You Ready for a Programming Adventure?](http://www.braveclojure.com/)
 - [SELFHTML](https://wiki.selfhtml.org/)
+- [W3Schools CSS Tutorial](http://www.w3schools.com/css/default.asp)
 
 ## Contents
 Instead of firing big frameworks towards our project we will go mostly step by step through the basics of webdevelopment. I will stick to the order I learned PHP in past and will possible include some sample projects later.
@@ -15,8 +16,8 @@ This tutorial contains the following topics:
 - [x] [Tutorial 4 - Creating a **HTML form and data structure** used by guestbooks](/tutorial4/)
 - [x] [Tutorial 5 - Attach a simple **SQLite-Database** to store and read records](/tutorial5/)
 - [x] [Tutorial 6 - Programming **CSS**, a few words about **optimisation**, **Wrap-Reload** and **Wrap-Refresh**](/tutorial6/)
-- [ ] [Tutorial 7 - Style the guestbook with **CSS**](/tutorial7/)
-- [ ] [Tutorial 8 - **HTML and CSS** client side validation](/tutorial8/)
+- [x] [Tutorial 7 - Style the guestbook with **CSS**](/tutorial7/)
+- [x] [Tutorial 8 - **HTML and CSS** client side validation and hints](/tutorial8/)
 - [ ] Tutorial  - Adding **tests** to the project
 - [ ] Tutorial  - Debugging projects with some simple **logging** to console
 - [ ] Tutorial  - Playing with **URL Parameters**
