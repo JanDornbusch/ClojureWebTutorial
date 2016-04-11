@@ -18,7 +18,7 @@ This tutorial contains the following topics:
 - [x] [Tutorial 6 - Programming **CSS**, a few words about **optimisation**, **Wrap-Reload** and **Wrap-Refresh**](/tutorial6/)
 - [x] [Tutorial 7 - Style the guestbook with **CSS**](/tutorial7/)
 - [x] [Tutorial 8 - **HTML and CSS** client side validation and hints](/tutorial8/)
-- [ ] Tutorial  - Adding **tests** to the project
+- [x] [Tutorial 9 - How **tests** work in clojure](/tutorial9/)
 - [ ] Tutorial  - Debugging projects with some simple **logging** to console
 - [ ] Tutorial  - Playing with **URL Parameters**
 - [ ] Tutorial  - **Antipattern** to URL parameters
