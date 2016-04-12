@@ -101,6 +101,6 @@ and run the test again:
 ###More Tests
 If you want some inspiration of how to test or simply how to use tests of libraries look into the test folder of clojure projects here at several different git reps.
 [Garden tests are found here](https://github.com/noprompt/garden/tree/master/test/garden) and
-tests we will add later of [Ring-Anti-Forgery](https://github.com/weavejester/ring-anti-forgery/tree/master/test/ring) only to mention 2 here.
+tests we will add later of [Ring-Anti-Forgery](https://github.com/weavejester/ring-anti-forgery/tree/master/test/ring) only to mention two repositories with tests here.
 
 More about tests I will introduce during the next chapters and show possibilities of testing with the new coming functionality.
