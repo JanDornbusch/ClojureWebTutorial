@@ -19,7 +19,7 @@ Rarely? Why rarely? There are ways to track usage of certain functions wich allo
 Before talking about ideas of testing web pages, I will explain some basics.
 Imagine you just wrote a function which will behave as follows:
 
-|---Interval---|---Definition---|---Output---|
+|Interval|Definition|Output|
 |------|------|------|
 |(-&#8734;,2)|{x &#8712; Q &#124; x < 2}|0|
 |&#91;2,6)|{x &#8712; Q &#124; 2 <= x < 6}|1|

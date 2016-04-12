@@ -1,6 +1,6 @@
 # Clojure Web Tutorial
 This is a simple step by step tutorial about Clojure Webdevelopment.
-![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/png/cc-zero.png)
+<img alt="CC0" src="http://mirrors.creativecommons.org/presskit/buttons/88x31/png/cc-zero.png" width="150px">
 
 This is currently not a beginning at 0 tutorial. If you need basic infomation have a look at:
 - [Are You Ready for a Programming Adventure?](http://www.braveclojure.com/)
@@ -19,12 +19,12 @@ This tutorial contains the following topics:
 - [x] [Tutorial 7 - Style the guestbook with **CSS**](/tutorial7/)
 - [x] [Tutorial 8 - **HTML and CSS** client side validation and hints](/tutorial8/)
 - [x] [Tutorial 9 - How **tests** work in clojure](/tutorial9/)
-- [ ] Tutorial  - Debugging projects with some simple **logging** to console
+- [ ] Tutorial 10 - Debugging projects with **logging** to console
 - [ ] Tutorial  - Playing with **URL Parameters**
 - [ ] Tutorial  - **Antipattern** to URL parameters
 - [ ] Tutorial  - Extending the project by **ClojureScript** hello world
 - [ ] Tutorial  - Include **Figwheel** a tool that allows to reload code without server roundtrips.
-- [ ] Tutorial  - Writing **simple** ClojureScript with **events**
+- [ ] Tutorial  - Writing simple **ClojureScript** with **events**
 - [ ] Tutorial  - Security to guestbook (**XSS**) cross-site-scripting
 - [ ] Tutorial  - Security part 2 (**CSRF**) cross-site-request-forgery
 - [ ] Tutorial  - Playing with **Sessions**
