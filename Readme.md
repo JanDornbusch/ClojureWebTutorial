@@ -19,7 +19,8 @@ This tutorial contains the following topics:
 - [x] [Tutorial 7 - Style the guestbook with **CSS**](/tutorial7/)
 - [x] [Tutorial 8 - **HTML and CSS** client side validation and hints](/tutorial8/)
 - [x] [Tutorial 9 - How **tests** work in clojure](/tutorial9/)
-- [ ] Tutorial 10 - Debugging projects with **logging** to console
+- [x] [Tutorial 10 - Debugging projects with **logging** to console](/tutorial10/)
+- [ ] [Tutorial 11 - Basic **security** to inputs](/tutorial11/)
 - [ ] Tutorial  - Playing with **URL Parameters**
 - [ ] Tutorial  - **Antipattern** to URL parameters
 - [ ] Tutorial  - Extending the project by **ClojureScript** hello world
@@ -30,6 +31,9 @@ This tutorial contains the following topics:
 - [ ] Tutorial  - Playing with **Sessions**
 - [ ] To be continued
 - [ ] Buddie or Friend, React/Goog?, Stacktrace...
+
+##Missing explanations?
+Clojure is a really self reading language. This is why I mostly show code samples and explain basics beside them, but not the code itselfe. If there is a part you would like to know the code more in detail, let me know.
 
 ## Questions?
 In case you are missing information or do not understand what I tried to express let me know and I will see if I can change it or add them within this tutorial.
