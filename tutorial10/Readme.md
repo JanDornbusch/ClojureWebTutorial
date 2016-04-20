@@ -194,6 +194,11 @@ Here is an example of the logging:
 As servers normally log to files and wrap-log (see [https://github.com/pjlegato/ring.middleware.logger](https://github.com/pjlegato/ring.middleware.logger) is too much overpowered to me, we will write our own short logging function.
 
 ```clojure
+(defn get-time [toformat]
+  (-> toformat
+      (java.text.SimpleDateFormat.)
+      (.format (java.util.Date.))))
+
 (defn write-log [file request response duration ex]
   (let [log (if (nil? ex)
               (join " " [
