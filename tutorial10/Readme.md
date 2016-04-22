@@ -192,8 +192,16 @@ Here is an example of the logging:
 
 ##Logging to files
 As servers normally log to files and wrap-log (see [https://github.com/pjlegato/ring.middleware.logger](https://github.com/pjlegato/ring.middleware.logger) is too much overpowered to me, we will write our own short logging function.
+As we now enter an area of programming which is made to fail some times (no space left, write failed or anything else) we will add more try ... catch logic. Altering the project `testapp\ project.clj ` and add `[try-let "1.1.0"] `.
 
 ```clojure
+...
+;; adding to
+:require ...
+[clojure.java.io :refer [make-parents]]
+[try-let :refer [try-let]]
+...
+
 (defn get-time [toformat]
   (-> toformat
       (java.text.SimpleDateFormat.)
@@ -229,11 +237,12 @@ As servers normally log to files and wrap-log (see [https://github.com/pjlegato/
     (fn [request]
       (make-parents file)
       (let [start (System/currentTimeMillis)]
-        (let [response (try (handler request)
-                         (catch Exception ex (write-log file request nil nil ex)))
-              duration (- (System/currentTimeMillis) start)]
-          (write-log file request response duration nil)
-           response)))))
+        (try-let [response (handler request)
+                  duration (- (System/currentTimeMillis) start)]
+                 (write-log file request response duration nil)
+                 response
+                 (catch Exception ex
+                   (write-log file request nil nil ex)))))))
 
 ;; and add to end of app
 

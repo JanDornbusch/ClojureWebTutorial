@@ -9,7 +9,8 @@
             [testapp.routes.home :refer [home-routes]]
             [testapp.models.guestbook :as db]
             [clojure.pprint]
-            [clojure.java.io :refer [make-parents]])
+            [clojure.java.io :refer [make-parents]]
+            [try-let :refer [try-let]])
   (:use [ring.middleware.refresh]
         [clojure.string :refer [includes? join]]))
 
@@ -92,11 +93,12 @@
     (fn [request]
       (make-parents file)
       (let [start (System/currentTimeMillis)]
-        (let [response (try (handler request)
-                         (catch Exception ex (write-log file request nil nil ex)))
-              duration (- (System/currentTimeMillis) start)]
-          (write-log file request response duration nil)
-           response)))))
+        (try-let [response (handler request)
+                  duration (- (System/currentTimeMillis) start)]
+                 (write-log file request response duration nil)
+                 response
+                 (catch Exception ex
+                   (write-log file request nil nil ex)))))))
 
 
 ;; /*****************************ROUTES*********************************************/

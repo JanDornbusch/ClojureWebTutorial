@@ -9,7 +9,9 @@
                  [org.clojure/java.jdbc "0.4.2"]
                  [org.xerial/sqlite-jdbc "3.8.11.2"]
                  ;; CSS
-                 [garden "1.3.2"]]
+                 [garden "1.3.2"]
+                 ;; let-try ... catch
+                 [try-let "1.1.0"]]
   :plugins [[lein-ring "0.9.7"]
             [lein-garden "0.2.6"]
             [quickie "0.4.2"]]
