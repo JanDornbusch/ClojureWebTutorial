@@ -21,7 +21,7 @@ This tutorial contains the following topics:
 - [x] [Tutorial 8 - **HTML and CSS** client side validation and hints](/tutorial8/)
 - [x] [Tutorial 9 - How **tests** work in clojure](/tutorial9/)
 - [x] [Tutorial 10 - Debugging projects with **logging** to console](/tutorial10/)
-- [ ] [Tutorial 11 - Basic **security** to inputs](/tutorial11/)
+- [x] [Tutorial 11 - Basic **security** to inputs and **commenting** functions](/tutorial11/)
 - [ ] Tutorial  - Playing with **URL Parameters**
 - [ ] Tutorial  - **Antipattern** to URL parameters
 - [ ] Tutorial  - Extending the project by **ClojureScript** hello world

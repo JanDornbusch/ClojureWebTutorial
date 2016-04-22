@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  color: #000000;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  background: #000000 url(/img/bg_guestbook.jpg) 0 0 repeat-x;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#viewport {
+  min-height: 100%;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto -200px;
+}
+
+#main {
+  margin: 0 auto;
+  padding: 25px 0 5px 0;
+  width: 500px;
+  box-shadow: 0 0px 10px hsla(0, 0%, 0%, 0.3);
+  -webkit-box-shadow: 0 0px 10px hsla(0, 0%, 0%, 0.3);
+  -moz-box-shadow: 0 0px 10px hsla(0, 0%, 0%, 0.3);
+  -o-box-shadow: 0 0px 10px hsla(0, 0%, 0%, 0.3);
+  background-color: hsla(0, 0%, 100%, 0.3);
+}
+
+#footer, #space {
+  width: 100%;
+  height: 200px;
+}
+
+#footer {
+  background-color: hsla(0, 0%, 100%, 0.3);
+  overflow: auto;
+}
+
+fieldset {
+  padding: 0 40px 35px 50px;
+  margin: 0;
+  border: 0px solid transparent;
+}
+
+fieldset ul {
+  margin: 0;
+  padding: 15px 0 0 0;
+  list-style-type: none;
+}
+
+fieldset li {
+  float: left;
+  margin: 0 0 12px 0;
+  padding: 0;
+  width: 253px;
+}
+
+fieldset li:first-child {
+  margin: 0 40px 12px 0;
+}
+
+fieldset legend {
+  margin: 0 0 0 -60px;
+  padding: 7px 20px;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 18px;
+  background: linear-gradient(#7996c6, #2050a0);
+  box-shadow: 1px 1px 2px #CCC;
+  -webkit-box-shadow: 1px 1px 2px #CCC;
+  -moz-box-shadow: 1px 1px 2px #CCC;
+  -o-box-shadow: 1px 1px 2px #CCC;
+}
+
+form {
+  border: 0;
+  width: 360px;
+  background-color: #ffffff;
+  border-radius: 5px;
+  padding: 15px 0 0 0;
+  margin: 0 auto;
+  position: relative;
+}
+
+label {
+  float: left;
+  inline-height: 167%;
+  width: 83px;
+  cursor: pointer;
+  position: relative;
+}
+
+input, textarea {
+  float: left;
+  height: 20px;
+  width: 161px;
+  border: 1px solid #7996c6;
+  padding: 0;
+  background: #ffffff;
+}
+
+input:focus:invalid, input:required:invalid {
+  background: #ffffff url(/img/exclamation_mark.png) no-repeat 98% center/15px 15px;
+  border-color: #ff0000;
+  box-shadow: 0 0 5px #ff9999;
+  -webkit-box-shadow: 0 0 5px #ff9999;
+  -moz-box-shadow: 0 0 5px #ff9999;
+  -o-box-shadow: 0 0 5px #ff9999;
+}
+
+textarea:focus:invalid, textarea:required:invalid {
+  background: #ffffff url(/img/exclamation_mark.png) no-repeat 98% 2%/15px 15px;
+  border-color: #ff0000;
+  box-shadow: 0 0 5px #ff9999;
+  -webkit-box-shadow: 0 0 5px #ff9999;
+  -moz-box-shadow: 0 0 5px #ff9999;
+  -o-box-shadow: 0 0 5px #ff9999;
+}
+
+input:focus:valid, input:required:valid {
+  background: #ffffff url(/img/tick.png) no-repeat 98% center/15px 15px;
+  border: 1px solid #00b200;
+  background-color: #ccefcc;
+}
+
+textarea:focus:valid, textarea:required:valid {
+  background: #ffffff url(/img/tick.png) no-repeat 98% 2%/15px 15px;
+  border: 1px solid #00b200;
+  background-color: #ccefcc;
+}
+
+textarea {
+  height: 100px;
+}
+
+input:active, input:active:invalid, input:active:valid, input:hover, input:hover:invalid, input:hover:valid, input:focus, input:focus:invalid, input:focus:valid, textarea:active, textarea:active:invalid, textarea:active:valid, textarea:hover, textarea:hover:invalid, textarea:hover:valid, textarea:focus, textarea:focus:invalid, textarea:focus:valid {
+  border-color: #2050a0;
+  background-color: #d2dcec;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  -o-box-shadow: none;
+}
+
+.form_hint {
+  background: #d2dcec;
+  color: #000000;
+  margin-left: 15px;
+  padding: 1px 8px;
+  z-index: 999;
+  position: absolute;
+  display: none;
+}
+
+.form_hint::before {
+  content: "\25C0";
+  color: #d2dcec;
+  position: absolute;
+  top: 1px;
+  left: -10px;
+}
+
+input:required:valid+.form_hint {
+  background-color: #ccefcc;
+}
+
+input:required:valid+.form_hint::before {
+  color: #ccefcc;
+}
+
+input:active+.form_hint, input:hover+.form_hint, input:focus+.form_hint {
+  display: inline;
+}
+
+input.btnReset, input.btnSubmit {
+  float: left;
+  width: 85px;
+  height: 30px;
+  margin: 25px 0 0 0;
+  border: 1px solid #7996c6;
+  padding: 0 0 2px 0;
+  text-align: center;
+  text-indent: 0px;
+  cursor: pointer;
+  font-weight: bold;
+  background: #7996c6;
+  color: #FFF;
+}
+
+input.btnSubmit {
+  float: right;
+  margin-right: 7px;
+  border: 1px solid #2050a0;
+  background: #2050a0;
+}
+
+input.btnReset:hover, input.btnReset:active, input.btnReset:focus {
+  border-color: #2050a0;
+}
+
+input.btnSubmit:hover, input.btnSubmit:active, input.btnSubmit:focus {
+  box-shadow: 0 0 8px hsla(217.4026, 40.314137%, 62.54902%, 0.8);
+  -webkit-box-shadow: 0 0 8px hsla(217.4026, 40.314137%, 62.54902%, 0.8);
+  -moz-box-shadow: 0 0 8px hsla(217.4026, 40.314137%, 62.54902%, 0.8);
+  -o-box-shadow: 0 0 8px hsla(217.4026, 40.314137%, 62.54902%, 0.8);
+}
+
+em {
+  font-weight: bold;
+  font-size: 142%;
+  color: #E00;
+}
+
+label[title~="mandatory"]::after {
+  content: "*";
+  position: absolute;
+  left: 70px;
+  top: 0;
+}
+
+label[title~="mandatory"]::after, em {
+  font-weight: bold;
+  font-size: 142%;
+  color: #E00;
+}
+
+.error {
+  color: #ff0000;
+}
+
+.error input, .error textarea {
+  border-color: #ff0000;
+  background-color: #ff9999;
+}
+
+.errorMessage {
+  border-style: solid;
+  color: #ff0000;
+  float: left;
+  background-color: #ff9999;
+  width: 360px;
+  border-width: 1px 0;
+  padding: 0;
+  border-color: #ff0000;
+  margin: 0 0 20px -50px;
+}
+
+.errorMessage span {
+  display: inline-block;
+  padding: 15px 40px 15px 50px;
+}
+
+#footer ol {
+  list-style-type: none;
+}
+
+#footer li {
+  float: left;
+  padding: 0;
+  margin: 0.5em;
+  border-width: 1px;
+  border-style: solid;
+  border-image: linear-gradient(to bottom, #7996c6, #2050a0) 1 100%;
+  border-image-slice: 1;
+}
+
+#footer .commentAuthor {
+  background-color: #2050a0;
+  color: #ffffff;
+  font-weight: bold;
+  padding: 0.2em;
+  width: 20em;
+}
+
+#footer .comment {
+  background-color: #ffffff;
+  padding: 0.2em;
+  width: 20em;
+}
+
+#footer .comment blockquote {
+  padding-bottom: 0.5em;
+}
+
+#footer .date {
+  background-color: #d2dcec;
+}
