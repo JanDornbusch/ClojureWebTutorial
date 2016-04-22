@@ -1,7 +1,9 @@
 # Clojure Web Tutorial
 This is a simple step by step tutorial about Clojure Webdevelopment.
+
 <img alt="CC0" src="http://mirrors.creativecommons.org/presskit/buttons/88x31/png/cc-zero.png" width="150px">
-Even with CC0 if you can afford it would be kind of you to mention the source or give this a star if you cite me or use this tutorial. Thx.
+
+Even licensed by CC0, if you can afford it, it would be kind of you to mention the source or give this a star if you like, cite or use this tutorial. Thx.
 
 This is currently not a beginning at 0 tutorial. If you need basic infomation have a look at:
 - Clojure [Are You Ready for a Programming Adventure?](http://www.braveclojure.com/)

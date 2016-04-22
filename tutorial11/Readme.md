@@ -37,7 +37,7 @@ The changes are minor:
 ```
 
 ## Testing the protection
-Accessing the URL by enter `http://localhost:8080/?firstname=bad&message=%253c%2573%2563%2572%2569%2570%2574%253e%2520%2561%256c%2565%2572%2574%2528%255c%2522%2548%2565%256c%256c%256f%2521%2520%2549%2520%2561%256d%2520%2561%256e%2520%2565%2576%2569%256c%2520%2561%256c%2565%2572%2574%2520%2562%256f%2578%2521%255c%2522%2529%253b%2520%253c%252f%2573%2563%2572%2569%2570%2574%253e ` in your browser wll not work. It will just send a GET not the required POST. You will have to use an additional plugin to test this way.
+Accessing the URL by enter `http://localhost:8080/?firstname=bad&message=%3c%73%63%72%69%70%74%3e%20%61%6c%65%72%74%28%5c%22%48%65%6c%6c%6f%21%20%49%20%61%6d%20%61%6e%20%65%76%69%6c%20%61%6c%65%72%74%20%62%6f%78%21%5c%22%29%3b%20%3c%2f%73%63%72%69%70%74%3e ` in your browser wll not work. It will just send a GET not the required POST. You will have to use an additional plugin to test this way.
 
 Within firefox HttpRequester is an addon which will do this for you. Copy the URL into the URL field and hit POST button to execute it. You will see the message is added to our guestbook but no script is executed.
 
