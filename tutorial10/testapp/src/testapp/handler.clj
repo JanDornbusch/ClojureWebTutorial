@@ -54,8 +54,8 @@
           (let [outgoing (format-logs (str "***** " logname " ***** OUTgoing response map *****") response keystriper headerstriper with-body)]
             ;; (println outgoing) ;; Single message logging
             (println incoming "\n" outgoing) ;; Double message logging
-            response))))
-    (handler request)))
+            response)))
+    (handler request))))
 
 (defn get-time [toformat]
   (-> toformat
