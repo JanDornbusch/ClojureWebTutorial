@@ -3,9 +3,10 @@ This is a simple step by step tutorial about Clojure Webdevelopment.
 <img alt="CC0" src="http://mirrors.creativecommons.org/presskit/buttons/88x31/png/cc-zero.png" width="150px">
 
 This is currently not a beginning at 0 tutorial. If you need basic infomation have a look at:
-- [Are You Ready for a Programming Adventure?](http://www.braveclojure.com/)
-- [SELFHTML](https://wiki.selfhtml.org/)
-- [W3Schools CSS Tutorial](http://www.w3schools.com/css/default.asp)
+- Clojure [Are You Ready for a Programming Adventure?](http://www.braveclojure.com/)
+- Style Guide [clojure-style-guide](https://github.com/bbatsov/clojure-style-guide)
+- HTML [SELFHTML](https://wiki.selfhtml.org/)
+- CSS [W3Schools CSS Tutorial](http://www.w3schools.com/css/default.asp)
 
 ## Contents
 Instead of firing big frameworks towards our project we will go mostly step by step through the basics of webdevelopment. I will stick to the order I learned PHP in past and will possible include some sample projects later.
@@ -33,7 +34,7 @@ This tutorial contains the following topics:
 - [ ] Buddie or Friend, React/Goog?, Stacktrace...
 
 ##Missing explanations?
-Clojure is a really self reading language. This is why I mostly show code samples and explain basics beside them, but not the code itselfe. If there is a part you would like to know the code more in detail, let me know.
+Clojure is a really self explaining (by reading) language. This is why I mostly show code samples and explain basics beside them, but not the code itselfe. If there is a part you would like to know the code more in detail, let me know.
 
 ## Questions?
 In case you are missing information or do not understand what I tried to express let me know and I will see if I can change it or add them within this tutorial.

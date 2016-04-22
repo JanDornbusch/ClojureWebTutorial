@@ -17,9 +17,9 @@
 
 (defn init []
   (println "testapp is starting")
-  (if-not (.exists (java.io.File. "./db.sq3"))
-    (do (println "creating database")
-        (db/create-guestbook-table))))
+  (when-not (.exists (java.io.File. "./db.sq3"))
+    (println "creating database")
+    (db/create-guestbook-table)))
 
 (defn destroy []
   (println "testapp is shutting down"))
