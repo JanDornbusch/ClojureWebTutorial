@@ -33,7 +33,7 @@
     (with-out-str
       (println logname)
       (clojure.pprint/pprint without-striped-keys-and-headers)
-      (if (true? with-body)
+      (if with-body
         (do (println "-------------------------------")
          (clojure.pprint/pprint body)))
       (println "***************** END OF LOG *************"))))
