@@ -27,11 +27,16 @@ Extend the app after routes function in `testapp\ src\ testapp\ handler.clj `.
 ```clojure
 (def app
   (-> (routes ...)
-      (wrap-log) ;; adapters side
+      (wrap-log) ;; handlers side due to evaluation order of the functions? please correct me if I am wrong here, but print to console points out it is correct
       (...)
-      (wrap-log) ;; handlers side
+      (wrap-log) ;; adapters side
   ))
 ```
+
+Well, as you see above the evaluation of nested functions work different to other languages you might know. 
+I guess in this case the functions are passed as vars inside the wrapper and are first evaluated, at the moment of applying the request to the handler `(let [response (handler request)] `.
+So the first `println ` fires before we go deep inside all functions towards the `handler ` (let us name it deepest function). 
+After this it returns back through all function returns up to our first wrapper where the last `println ` is the last function before the request is returned to the adapter. 
 
 Now every time the page reloads you will see the requests and responses within the console. Do not wonder if it produces several outputs with only 1 visitor!
 This is caused by the browser sending several requests to the server (HTML, CSS, image) for now.
