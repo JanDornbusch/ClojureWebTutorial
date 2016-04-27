@@ -5,7 +5,7 @@ This is a simple step by step tutorial about Clojure Webdevelopment.
 
 Even when this tutorial is licensed by CC0, if you can afford it, it would be kind of you to mention the source or give this a star if you like, cite or use it. Thx.
 
-This is currently not a beginning at 0 tutorial. If you need basic infomation have a look at:
+This is not a beginning at 0 tutorial. If you need basic infomation have a look at:
 - Clojure [Are You Ready for a Programming Adventure?](http://www.braveclojure.com/)
 - Style Guide [clojure-style-guide](https://github.com/bbatsov/clojure-style-guide)
 - Clojure #'_::: syntactical suggar [the weird and wonderful characters](https://yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-characters-of-clojure/)
@@ -25,7 +25,7 @@ This tutorial contains the following topics:
 - [ ] Tutorial  - **Antipattern** to URL parameters
 - [ ] Tutorial  - Playing with **Sessions**
 - [ ] Tutorial  - Extending the project by **ClojureScript** hello world
-- [ ] Tutorial  - Include **Figwheel** a tool that allows to reload code without server roundtrips.
+- [ ] Tutorial  - Include **Figwheel** a tool that allows to reload the client side code without loosing the applicationstate.
 - [ ] Tutorial  - Writing simple **ClojureScript** with **events**
 
 ### Part 2 - Guestbook
@@ -37,7 +37,7 @@ This tutorial contains the following topics:
 - [x] [Tutorial 9 - How **tests** work in clojure](/tutorial9/)
 - [x] [Tutorial 10 - Debugging projects with **logging** to console](/tutorial10/)
 - [x] [Tutorial 11 - Basic **security** (**XSS**) cross-site-scripting to inputs and **commenting** it](/tutorial11/)
-- [ ] Tutorial  - Security part 2 (**CSRF**) cross-site-request-forgery
+- [x] [Tutorial 12 - Security part 2 (**CSRF**) cross-site-request-forgery](/tutorial12/)
 
 ### Part 3 - Livechat
 - [ ] To be continued
