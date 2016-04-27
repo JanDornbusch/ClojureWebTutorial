@@ -36,7 +36,7 @@ This tutorial contains the following topics:
 - [x] [Tutorial 8 - **HTML and CSS** client side validation and hints](/tutorial8/)
 - [x] [Tutorial 9 - How **tests** work in clojure](/tutorial9/)
 - [x] [Tutorial 10 - Debugging projects with **logging** to console](/tutorial10/)
-- [x] [Tutorial 11 - Basic **security** (**XSS**) cross-site-scripting to inputs and **commenting** it](/tutorial11/)
+- [x] [Tutorial 11 - Basic **security** (**XSS**) cross-site-scripting for inputs and **commenting** functions](/tutorial11/)
 - [x] [Tutorial 12 - Security part 2 (**CSRF**) cross-site-request-forgery](/tutorial12/)
 
 ### Part 3 - Livechat
