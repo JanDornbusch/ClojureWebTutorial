@@ -4,7 +4,7 @@ As already mentioned in [tutorial 5](../tutorial5/) there are possible attacs to
 - [Introduction](#introduction)
 - [Securing HTML inputs](#securing-html-inputs)
 - [Testing the protection](#testing-the-protection)
-- [Additional info to errors thrown](#additional-info-to-errors-thrown)
+- [Additional info about errors thrown](#additional-info-about-errors-thrown)
 - [Commenting functions](#commenting-functions)
 
 
@@ -44,7 +44,7 @@ Within firefox HttpRequester is an addon which will do this for you. Copy the UR
 In case you want allow some HTML be sure the attack vectors shown above (link OWASP) do not work later!.
 
 
-## Additional info to errors thrown
+## Additional info about errors thrown
 When deleting the database and reloading the page you will get a NOT-FOUND error. But a restart did not help!
 Looking inside log files you will see there is an info about missing table in database. This is caused by deleting it during runtime and reloading the page. It will try to access the file and create it empty. So the restart did not determine it as missing and also did not recreate it.
 
