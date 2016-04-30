@@ -21,8 +21,7 @@ This tutorial contains the following topics:
 - [x] [Tutorial 1 - Basics about **Ring** and Requests](/tutorial1/)
 - [x] [Tutorial 2 - Prerequirements, **LightTable** setup and creating a simple **hands-on** project](/tutorial2/)
 - [x] [Tutorial 3 - Folder structure, **compojure** and **hiccup**](/tutorial3/)
-- [ ] Tutorial  - Playing with **URL Parameters**
-- [ ] Tutorial  - **Antipattern** to URL parameters
+- [x] [Tutorial 13 - Playing with **URL parameters** and antipatterns](/tutorial13/)
 - [ ] Tutorial  - Playing with **Sessions**
 - [ ] Tutorial  - Extending the project by **ClojureScript** hello world
 - [ ] Tutorial  - Include **Figwheel** a tool that allows to reload the client side code without loosing the applicationstate.
