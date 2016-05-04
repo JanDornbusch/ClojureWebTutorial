@@ -22,7 +22,7 @@ This tutorial contains the following topics:
 - [x] [Tutorial 2 - Prerequirements, **LightTable** setup and creating a simple **hands-on** project](/tutorial2/)
 - [x] [Tutorial 3 - Folder structure, **compojure** and **hiccup**](/tutorial3/)
 - [x] [Tutorial 13 - Playing with **URL parameters** and antipatterns](/tutorial13/)
-- [ ] [Tutorial 14 - Playing with **Sessions** and secure content types](/tutorial14/)
+- [x] [Tutorial 14 - Playing with **Sessions** and secure content types](/tutorial14/)
 - [ ] Tutorial  - Custom error page
 - [ ] Tutorial  - Extending the project by **ClojureScript** hello world
 - [ ] Tutorial  - Include **Figwheel** a tool that allows to reload the client side code without loosing the applicationstate
@@ -54,4 +54,5 @@ In case you are missing information or do not understand what I tried to express
 Please let me know if you are missing anything, if there are security holes, or other improvements I forgot to mention/include. Feel free to help me to improve this tutorial.
 
 ### ToDo
+- Add context macro to URL-parameters tutorial
 - To be listed here. ;-)
