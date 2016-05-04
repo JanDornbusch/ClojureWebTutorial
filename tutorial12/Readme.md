@@ -50,7 +50,7 @@ We will remove the handler/site here too. It is deprecated since 1.2. But this w
 which have been included within this handler.
 
 Comparing both lists above it will be a good idea to use the full library instead of pull all the defaults given inside it up to our handler.
-We will have to add this lines to the dependencies of our project:
+We will have to add this lines to the dependencies of our project `testapp\ project.clj `:
 
 ```clojure
 [ring/ring-defaults "0.2.0"]

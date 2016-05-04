@@ -22,9 +22,10 @@ This tutorial contains the following topics:
 - [x] [Tutorial 2 - Prerequirements, **LightTable** setup and creating a simple **hands-on** project](/tutorial2/)
 - [x] [Tutorial 3 - Folder structure, **compojure** and **hiccup**](/tutorial3/)
 - [x] [Tutorial 13 - Playing with **URL parameters** and antipatterns](/tutorial13/)
-- [ ] Tutorial  - Playing with **Sessions**
+- [ ] [Tutorial 14 - Playing with **Sessions**](/tutorial14/)
+- [ ] Tutorial  - Custom error page
 - [ ] Tutorial  - Extending the project by **ClojureScript** hello world
-- [ ] Tutorial  - Include **Figwheel** a tool that allows to reload the client side code without loosing the applicationstate.
+- [ ] Tutorial  - Include **Figwheel** a tool that allows to reload the client side code without loosing the applicationstate
 - [ ] Tutorial  - Writing simple **ClojureScript** with **events**
 
 ### Part 2 - Guestbook
@@ -47,7 +48,7 @@ This tutorial contains the following topics:
 Clojure is a really self explaining (by reading) language. This is why I mostly show code samples and explain basics beside them, but not the code itselfe. If there is a part you would like to know the code more in detail, let me know.
 
 ### Questions?
-In case you are missing information or do not understand what I tried to express let me know and I will see if I can change it or add them within this tutorial.
+In case you are missing information or do not understand what I tried to express let me know and I will see if I can change or add it within this tutorial.
 
 ### Suggestions / Contribution?
 Please let me know if you are missing anything, if there are security holes, or other improvements I forgot to mention/include. Feel free to help me to improve this tutorial.
