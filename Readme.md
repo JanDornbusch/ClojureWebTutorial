@@ -22,7 +22,7 @@ This tutorial contains the following topics:
 - [x] [Tutorial 2 - Prerequirements, **LightTable** setup and creating a simple **hands-on** project](/tutorial2/)
 - [x] [Tutorial 3 - Folder structure, **compojure** and **hiccup**](/tutorial3/)
 - [x] [Tutorial 13 - Playing with **URL parameters** and antipatterns](/tutorial13/)
-- [ ] [Tutorial 14 - Playing with **Sessions**](/tutorial14/)
+- [ ] [Tutorial 14 - Playing with **Sessions** and secure content types](/tutorial14/)
 - [ ] Tutorial  - Custom error page
 - [ ] Tutorial  - Extending the project by **ClojureScript** hello world
 - [ ] Tutorial  - Include **Figwheel** a tool that allows to reload the client side code without loosing the applicationstate

@@ -99,7 +99,8 @@
               (join " " [(get-time "[dd/MM/yyyy:HH:mm:ss Z]")
                          (request :remote-addr)
                          (request :uri)
-                         (.getMessage ex)]))]
+                         (.getMessage ex)
+                         "\r\n"]))]
     (try
       (spit file log :append true)
       (catch Exception exlog (println "Exception writing logs: " (.getMessage exlog) " Initial error: " log)))))
