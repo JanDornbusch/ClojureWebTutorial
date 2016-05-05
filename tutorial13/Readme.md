@@ -5,6 +5,7 @@ There should be no problems if you try out all this even before go through the g
 - [Why parameters](#why-parameters)
 - [Prepare a demo](#prepare-a-demo)
 - [How the routes work](#how-the-routes-work)
+- [Grouping paths](#grouping-paths)
 
 ## Why parameters
 When navigating withing pages you want to hand over parameters to your pages. If you use the common syntax `?param=value ` search engines possible will not follow it as dynamic content which possible already has changed on next visits.
@@ -123,3 +124,28 @@ Starting with compojure 1.3.0 inline regex where introduced and defined like `"/
 The old style used befor looked like `["/user/:id", :id #"[0-9]+"] `.
 
 Introduction of RegEx coul be found at [vogella](http://www.vogella.com/tutorials/JavaRegularExpressions/article.html) or [ocpsoft](http://www.ocpsoft.org/opensource/guide-to-regular-expressions-in-java-part-1/)
+
+## Grouping paths
+Compojure offers a context macro used to group paths an shorten the commands.
+Imagine you want to add an administrative area to the page, all below `/adm/ ` you will not have to write it to all paths, you can use the macro as follows:
+
+```clojure
+(defroutes adm-routes
+  (context "/adm" []
+    (GET "/" [] ...)         ; the route at "/adm/"
+    (GET "/dash" [] ...)     ; the route at "/adm/dash"
+    (GET "/mgmt" [] ...)))   ; the route at "/adm/mgmt"
+
+```
+
+If you want to combine it with vars for the user profile:
+
+```clojure
+(defroutes user-routes
+  (context "/user/:user-id" [user-id]
+    (GET "/profile" [] ...)  ; the route at "/user/:user-id/profile"
+    (GET "/logout" [] ...))) ; the route at "/user/:user-id/logout"
+
+```
+
+Compojures guide points out, that you can define the inner routes within an own function using the `routes ` macro and adding it within the context macro (you can use parameters too, passing the user-id inside the function).
