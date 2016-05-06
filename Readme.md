@@ -27,6 +27,7 @@ This tutorial contains the following topics:
 - [ ] Tutorial  - Extending the project by **ClojureScript** hello world
 - [ ] Tutorial  - Include **Figwheel** a tool that allows to reload the client side code without loosing the applicationstate
 - [ ] Tutorial  - Writing simple **ClojureScript** with **events**
+- [ ] Tutorial  - Internationalisation ways and speed
 
 ### Part 2 - Guestbook
 - [x] [Tutorial 4 - Creating a **HTML form and data structure** used by guestbooks](/tutorial4/)
@@ -54,5 +55,4 @@ In case you are missing information or do not understand what I tried to express
 Please let me know if you are missing anything, if there are security holes, or other improvements I forgot to mention/include. Feel free to help me to improve this tutorial.
 
 ### ToDo
-- Add context macro to URL-parameters tutorial
 - To be listed here. ;-)

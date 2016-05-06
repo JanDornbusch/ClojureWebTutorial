@@ -10,6 +10,7 @@ This will help you to share the state between all of your frontend servers.
     - [Sessions style 2](#sessions-style-2)
     - [About noir](#about-noir)
     - [Sessions and security](#sessions-and-security)
+- [Session stores](#session-stores)
 
 ## Prepare the session
 Working with sessions is much more easy than you might expect. If you followed the guide through the guestbook you already added the side-defaults to start a session instead of the deprecated handler/site.
@@ -188,3 +189,75 @@ When using sessions you will have to care several attacks following [OWASP Sessi
 
 Rings default session offers some [Ring Middleware](http://ring-clojure.github.io/ring-session-timeout/ring.middleware.session-timeout.html) with idle and absulute timeouts.
 The idle timeout can be used within noir `wrap-noir-session ` (without star) when passing into the wrapper `{:timeout (* 60 120) :timeout-response (redirect "/")} ` . The Ring timeouts will work for noir as well, as noir uses `:session :noir ` (a sub key of the normal session) as storage point.
+
+## Session stores
+Ring includes two different session stores to save data in:
+
+* `ring.middleware.session.memory/memory-store` - stores sessions in memory
+* `ring.middleware.session.cookie/cookie-store` - stores sessions encrypted in a cookie
+
+If you want to use one you can pass it by the `:store ` option inside the `wrap-session ` . With `wrap-defaults ` you will have to nest it within the `:session :store ` key.
+
+You can define your own session store by implementing the `SessionStore ` protocol:
+
+```clojure
+(use 'ring.middleware.session.store)
+
+(deftype CustomStore []
+  SessionStore
+  (read-session [_ key]
+    (read-data key))
+  (write-session [_ key data]
+    (let [key (or key (generate-new-random-key))]  ; This is important! New sessions did not contain a key! So your store have to expect this and genereate a new key.
+      (save-data key data)
+      key))
+  (delete-session [_ key]
+    (delete-data key)
+    nil))
+
+```
+
+### Redis
+As mentioned in introduction you can use Redis in memory store to store sessions. The clojure implementation you can use can be found at [github/wuzhe](https://github.com/wuzhe/clj-redis-session).
+The usage is just easy:
+
+```clojure
+; Add to dependencies of project:
+[clj-redis-session "2.1.0"]
+
+```
+
+Within the handler:
+
+```clojure
+;; Use
+[clj-redis-session.core :only [redis-store]]
+;; or require
+[clj-redis-session.core :refer [redis-store]]
+
+;; clj-redis-session configuration which uses Carmine as its Redis client
+(def redis-conn {:pool {<pool-opts>} :spec {<spec-opts>}})
+
+;; and the change to the wrapper
+(wrap-session {:store (redis-store redis-conn)})
+;; or
+(wrap-defaults {:session {:store (redis-store redis-conn)}})
+
+```
+
+[Carmine](https://github.com/ptaoussanis/carmine)
+
+The library offers expiration, extension and prefixing the session keys.
+
+```clojure
+;; expire after 12 hours
+(wrap-session your-app {:store (redis-store redis-conn {:expire-secs (* 3600 12)})})
+
+;; everytime when session gets read, it will reset current session expiration time.
+(wrap-session your-app {:store (redis-store redis-conn {:expire-secs (* 3600 12)
+                                                        :reset-on-read true})})
+
+;; use another prefix (default to session)
+(wrap-session your-app {:store (redis-store redis-conn {:prefix "i-am-prefix"})})
+
+```
