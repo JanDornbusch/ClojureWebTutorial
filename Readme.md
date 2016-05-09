@@ -23,11 +23,11 @@ This tutorial contains the following topics:
 - [x] [Tutorial 3 - Folder structure, **compojure** and **hiccup**](/tutorial3/)
 - [x] [Tutorial 13 - Playing with **URL parameters** and antipatterns](/tutorial13/)
 - [x] [Tutorial 14 - Playing with **Sessions** and secure content types](/tutorial14/)
-- [ ] Tutorial  - Custom error page
+- [x] [Tutorial 15 - Custom error page](/tutorial15/)
 - [ ] Tutorial  - Extending the project by **ClojureScript** hello world
 - [ ] Tutorial  - Include **Figwheel** a tool that allows to reload the client side code without loosing the applicationstate
 - [ ] Tutorial  - Writing simple **ClojureScript** with **events**
-- [ ] Tutorial  - Internationalisation ways and speed
+- [ ] Tutorial  - Internationalisation ways compared to speed
 
 ### Part 2 - Guestbook
 - [x] [Tutorial 4 - Creating a **HTML form and data structure** used by guestbooks](/tutorial4/)
