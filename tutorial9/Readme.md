@@ -4,6 +4,7 @@ As you can guess there are limits in automatic testing. Never forget to listen t
 
 - [Test strategies](#test-strategies)
     - [Basics](#basics)
+	- [Colors in Windows cmd](#colors-in-windows-cmd)
     - [Test WebApps](#test-webapps)
     - [More Tests](#more-tests)
 
@@ -52,6 +53,11 @@ But what is with 1.99949? Yes, the test above is not really covering all numbers
 What now? Might be the question. Let us have a look to the borders.
 The borders are between 3 and 4 decimal digits. So a valid testing should be to test if 3 digits are not rounded and if 4 digits are rounded to 3.
 Testing the function used to round? I would test it with the given conditions of test 5 and 6. It can happen that a framework breaks its functionality, so it is better in my personal oppinion to do this basic check if its an important function of your service.
+
+###Colors in Windows cmd
+If you are using Windows < version 10 you will have to tweak your console:
+[The HowTo you can find at emezeskes github](https://github.com/emezeske/lein-cljsbuild#color-coded-output-on-windows).
+
 
 ###Test WebApps
 Testing WebApps is a little more hard as the outputs are more complex. What you can do easy is to test functions aquire data of the database and check if the results are matching to the view rigths of a user logged in.

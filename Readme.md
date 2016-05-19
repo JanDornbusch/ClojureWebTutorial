@@ -24,12 +24,12 @@ This tutorial contains the following topics:
 - [x] [Tutorial 13 - Playing with **URL parameters** and antipatterns](/tutorial13/)
 - [x] [Tutorial 14 - Playing with **Sessions** and secure content types](/tutorial14/)
 - [x] [Tutorial 15 - Custom error page](/tutorial15/)
-- [ ] Tutorial  - Extending the project by **ClojureScript** hello world
+- [ ] [Tutorial 16 - Extending the project by **ClojureScript** hello world](/tutorial16)
 - [ ] Tutorial  - Include **Figwheel** a tool that allows to reload the client side code without loosing the applicationstate
 - [ ] Tutorial  - Writing simple **ClojureScript** with **events**
-- [ ] Tutorial  - Internationalisation ways compared to speed
+- [ ] Tutorial  - Internationalisation (i18n) methods compared to speed
 
-### Part 2 - Guestbook
+### Part 2 - Guestbook (more server side)
 - [x] [Tutorial 4 - Creating a **HTML form and data structure** used by guestbooks](/tutorial4/)
 - [x] [Tutorial 5 - Attach a simple **SQLite-Database** to store and read records](/tutorial5/)
 - [x] [Tutorial 6 - Programming **CSS**, a few words about **optimisation**, **Wrap-Reload** and **Wrap-Refresh**](/tutorial6/)
@@ -40,7 +40,7 @@ This tutorial contains the following topics:
 - [x] [Tutorial 11 - Basic **security** (**XSS**) cross-site-scripting for inputs and **commenting** functions](/tutorial11/)
 - [x] [Tutorial 12 - Security part 2 (**CSRF**) cross-site-request-forgery](/tutorial12/)
 
-### Part 3 - Livechat
+### Part 3 - Livechat (more client side)
 - [ ] To be continued
 - [ ] Buddie or Friend, React/Goog?, Stacktrace...
 
