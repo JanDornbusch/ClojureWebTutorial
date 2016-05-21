@@ -24,7 +24,7 @@ This tutorial contains the following topics:
 - [x] [Tutorial 13 - Playing with **URL parameters** and antipatterns](/tutorial13/)
 - [x] [Tutorial 14 - Playing with **Sessions** and secure content types](/tutorial14/)
 - [x] [Tutorial 15 - Custom error page](/tutorial15/)
-- [ ] [Tutorial 16 - Extending the project by **ClojureScript** hello world](/tutorial16)
+- [x] [Tutorial 16 - Extending the project by **ClojureScript** hello world](/tutorial16)
 - [ ] Tutorial  - Include **Figwheel** a tool that allows to reload the client side code without loosing the applicationstate
 - [ ] Tutorial  - Writing simple **ClojureScript** with **events**
 - [ ] Tutorial  - Internationalisation (i18n) methods compared to speed
