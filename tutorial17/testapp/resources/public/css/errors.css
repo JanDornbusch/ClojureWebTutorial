@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  background-color: #f2f2f2;
+}
+
+#head {
+  margin: 0;
+  padding: 4px 25px;
+  background: linear-gradient(#c1c1c1, #333333);
+  border-bottom: 1px solid #cecece;
+}
+
+#logo {
+  color: #ffffff;
+  font-family: Arial Rounded MT;
+  font-weight: bold;
+  font-size: 30px;
+  display: inline-block;
+  padding: 2px 5px;
+}
+
+#body {
+  margin: 0 auto;
+  padding: 25px 0 5px 0;
+  width: 80%;
+  background-color: #ffffff;
+}

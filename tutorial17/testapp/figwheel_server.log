@@ -1,0 +1,3 @@
+[0mCompiling "resources/public/js/app.js" from ["scripts"]...
+[32mSuccessfully compiled "resources/public/js/app.js" in 0.173 seconds.[0m
+notifying browser that file changed:  out\testapp\script\core.js
