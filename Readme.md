@@ -26,7 +26,7 @@ This tutorial contains the following topics:
 - [x] [Tutorial 15 - Custom error page](/tutorial15/)
 - [x] [Tutorial 16 - Extending the project by **ClojureScript** hello world](/tutorial16/)
 - [x] [Tutorial 17 - Include **Figwheel** a tool that allows to reload the client side code without loosing the applicationstate](/tutorial17/)
-- [ ] Tutorial  - Writing simple **ClojureScript** with **events**
+- [x] [Tutorial 18 - Writing **ClojureScript** with simple **event(s)** registering](/tutorial18/)
 - [ ] Tutorial  - Internationalisation (i18n) methods compared to speed
 
 ### Part 2 - Guestbook (more server side)
@@ -42,7 +42,6 @@ This tutorial contains the following topics:
 
 ### Part 3 - Livechat (more client side)
 - [ ] To be continued
-- [ ] Buddie or Friend, React/Goog?, Stacktrace...
 
 ## Additionals
 ### Missing explanations?
@@ -55,4 +54,10 @@ In case you are missing information or do not understand what I tried to express
 Please let me know if you are missing anything, if there are security holes, or other improvements I forgot to mention/include. Feel free to help me to improve this tutorial.
 
 ### ToDo
-- To be listed here. ;-)
+- Adding Apache Logging
+- Stacktrace?
+- Network Protocols
+- Websockets
+- React
+- Buddie or Friend
+
