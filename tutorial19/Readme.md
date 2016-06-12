@@ -125,11 +125,14 @@ The documentation of Aleph states:
 
 useful to know here are some keys you can supply to configure the server:
 
+
+| Key | Description |
 |---------|-------------|
 | `port` | the port the server will bind to.  If `0`, the server will bind to a random port.|
 | `socket-address` |  a `java.net.SocketAddress` specifying both the port and interface to bind to.|
 | `shutdown-executor?` | if `true`, the executor will be shut down when `.close()` is called on the server, defaults to `true`.|
 | `rejected-handler` | a spillover request-handler which is invoked when the executor's queue is full, and the request cannot be processed.  Defaults to a `503` response.|
+
 
 [A full list of keys can be found at Alephs documentation](http://aleph.io/codox/aleph/aleph.http.html#var-start-server)
 
