@@ -1,10 +1,11 @@
-# Tutorial 19 - Starting with **websockets** using Aleph
+# Tutorial 19 - Starting with **websockets** using **Aleph**
 This tutorial is about exchanging the Webserver to Aleph and learn how to enable websockets with a simple application.
 Caution: Websockets are first available starting with IE 10! (most other browser support them since stone age already)
 
 - [Clean up the Project](#clean-up-the-project)
 - [Replace the Server](#replace-the-server)
 - [Write simple scripts to send and receive messages](#write-simple-scripts-to-send-and-receive-messages)
+    - [Note about antipattern](#note-about-antipattern)
 
 ## Clean up the Project
 First of all we will clean up our project to remove some of the test scripts created in the previous tutorials.
@@ -124,11 +125,11 @@ The documentation of Aleph states:
 
 useful to know here are some keys you can supply to configure the server:
 
-|:---------|:-------------
-| `port` | the port the server will bind to.  If `0`, the server will bind to a random port.
-| `socket-address` |  a `java.net.SocketAddress` specifying both the port and interface to bind to.
-| `shutdown-executor?` | if `true`, the executor will be shut down when `.close()` is called on the server, defaults to `true`.
-| `rejected-handler` | a spillover request-handler which is invoked when the executor's queue is full, and the request cannot be processed.  Defaults to a `503` response.
+|---------|-------------|
+| `port` | the port the server will bind to.  If `0`, the server will bind to a random port.|
+| `socket-address` |  a `java.net.SocketAddress` specifying both the port and interface to bind to.|
+| `shutdown-executor?` | if `true`, the executor will be shut down when `.close()` is called on the server, defaults to `true`.|
+| `rejected-handler` | a spillover request-handler which is invoked when the executor's queue is full, and the request cannot be processed.  Defaults to a `503` response.|
 
 [A full list of keys can be found at Alephs documentation](http://aleph.io/codox/aleph/aleph.http.html#var-start-server)
 
@@ -297,3 +298,23 @@ After this we will have to alter our scirpts `testapp\ scripts\ core.cljs ` :
 (socketbinding)
 
 ```
+
+### Note about antipattern
+Note if you write server code take care it is not blocking the thread like:
+
+```clojure
+(defn echo-handler
+  "This handler blocks until the websocket handshake completes, which unnecessarily
+   takes up a thread."
+  [req]
+  (if-let [socket (try
+                    @(http/websocket-connection req)
+                    (catch Exception e
+                      nil))]
+    (s/connect socket socket)
+    non-websocket-request))
+
+```
+
+The used handler within our project accomplishes the same as above, but asynchronously.
+Generally prefer Alephs deferred `chain ` or `let-flow ` over blocking style.
