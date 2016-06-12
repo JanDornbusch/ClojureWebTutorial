@@ -41,6 +41,7 @@ This tutorial contains the following topics:
 - [x] [Tutorial 12 - Security part 2 (**CSRF**) cross-site-request-forgery](/tutorial12/)
 
 ### Part 3 - Livechat (more client side)
+- [x] [Tutorial 19 - Starting with **websockets** using Aleph](/tutorial19/)
 - [ ] To be continued
 
 ## Additionals
@@ -57,7 +58,6 @@ Please let me know if you are missing anything, if there are security holes, or 
 - Adding Apache Logging
 - Stacktrace?
 - Network Protocols
-- Websockets
 - React
 - Buddie or Friend
 
