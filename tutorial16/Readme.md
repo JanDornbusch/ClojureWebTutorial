@@ -7,6 +7,7 @@ With this tutorial I will introduce ClojureScript and show how easy it is to inc
     - [Colors in Windows cmd](#colors-in-windows-cmd)
     - [Preparing first scriptfile](#preparing-first-scriptfile)
     - [Adding a new route](#adding-a-new-route)
+    - [Accessing Javascript and fields](#accessing-javascript-and-fields)
     - [Compiling ClojureScript](#compiling-clojurescript)
 
 ## What is ClojureScript?
@@ -79,6 +80,8 @@ The scripts we will write will be stored in a separate folder which you will cre
 
 Until now I found this script 3 times and it looks similar each time, seems to be a good example ;-)
 
+If you want to use `println ` to send messages to the console of the browser you will have to add `(enable-console-print!) ` before calling functions which try to print to console!
+
 ### Adding a new route
 Now, we have to add a route where this file is included to the page.
 Create a new file `testapp\ src\ testapp\ routes\ script.clj ` to prepare the the page.
@@ -110,6 +113,25 @@ and as usual extending the handler `testapp\ src\ testapp\ handler.clj `.
 
 ;; and add to the app routes:
 script-routes
+
+```
+
+### Accessing Javascript and fields
+There is an interopability with Javascript. You can access all Javascript by using `(js/function_or_class param) ` here is an example:
+
+```Clojure
+(throw (js/Error. "Websocket is not available!")))
+
+```
+
+If you want to access fields like given in events or in elements you will use a leading `- ` on them:
+
+```Clojure
+(.-author elemet)
+(.-data event)
+(.-value (dom/getElement "button_socket"))
+(set! (.-onopen chan) (fn [event] (js/alert "WebSocket open!")))
+(or (= (.-readyState @socket) (.-OPEN js/WebSocket)) (= (.-readyState @socket) 1))
 
 ```
 
