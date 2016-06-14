@@ -153,9 +153,13 @@ Now we will have to upade the wrapper stack `testapp\ src\ testapp\ handler.clj 
 
 ```
 
-Next we rewite the functions to the new style. To access all session content we will grab deep inside noir and pull out the atom. In reality you better only access keys, even if this is not private!
+Next we rewite the functions to the new style `testapp\ src\ testapp\ routes\ session.clj ` . To access all session content we will grab deep inside noir and pull out the atom. In reality you better only access keys, even if this is not private!
 
 ```clojure
+;; require needs to be extended by:
+[noir.session :as noir]
+
+
 (defn session-startup []
   "Makes sure the startup time of the session is set
   In reality you should write a wrapper to do this"
@@ -182,7 +186,7 @@ Full documentation can be found within the [API doc](https://yogthos.github.io/l
 If you followed the tutorial, you possible have seen the missing forgery-token now. This is caused through the wrapper putting it not inside the noir atom and merging it into the session later.
 
 ### About noir
-If you like the functions noir offers there is also an `app-handler ` which will add noirs validation, cookies, flash and session tools. This will be extendet by wrap: request-map, defaults, base-url, middleware-format an access-rules. Have a look inside [code here](https://github.com/noir-clojure/lib-noir/blob/83ef3d80ddf8e41f7aeb1a6bdc565cd9a2a84062/src/noir/util/middleware.clj#L195).
+If you like the functions noir offers there is also an `app-handler ` which will add noirs validation, cookies, flash and session tools. This will be extended by wrap: request-map, defaults, base-url, middleware-format an access-rules. Have a look inside [code here](https://github.com/noir-clojure/lib-noir/blob/83ef3d80ddf8e41f7aeb1a6bdc565cd9a2a84062/src/noir/util/middleware.clj#L195).
 
 ### Sessions and security
 When using sessions you will have to care several attacks following [OWASP Session Management](https://www.owasp.org/index.php/Session_Management_Cheat_Sheet#Automatic_Session_Expiration). Looking out into the real world you will see many pages killing users application state and after logging in again all state is lost. Having a look at amazon you will see there are many features accessible with timed out sessions as they renew the ID (renewal timeout at OWASP) and only ask for a new login when accessing protected areas. And all time the state of application is not lost! I have seen some threads telling something like if timeout delete all and it is good. Please ask the user to log in again and keep the state stored with the user id to repopulate the new session after login again!
