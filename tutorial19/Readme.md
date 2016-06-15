@@ -332,4 +332,4 @@ One alternative is to wrap [Sente arround the requests](https://github.com/ptaou
 "Sente is a small client+server library that makes it easy to build reliable, high-performance realtime web applications with Clojure + ClojureScript."
 Which will use Ajax (auto-fallback) to emulate WebSockets by some kind of longtermpolling.
 
-
+As I prefer Alephs manifold techniques I will not evaluate Sente here. It offers a few sample projects already so feel free to use them.
