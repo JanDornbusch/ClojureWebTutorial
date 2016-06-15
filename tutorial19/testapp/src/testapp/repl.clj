@@ -24,10 +24,14 @@
     ;; blocks recreation if running
     (println "Warning server is running!")
     ;; select port if not supplied
-    (let [port (if port (Integer/parseInt port) 8080)]
+    (let [port (if port (Integer/parseInt port) 8080)
+          uri (format "http://localhost:%s/" port)]
       (reset! server
               (start-server (get-handler)
                      {:port port}))
+      (try
+        (.browse (java.awt.Desktop/getDesktop) (java.net.URI. uri))
+        (catch java.awt.HeadlessException _))
       (println (str "You can view the site at http://localhost:" port)))))
 
 (defn stop-server []

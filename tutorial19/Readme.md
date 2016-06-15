@@ -6,6 +6,7 @@ Caution: Websockets are first available starting with IE 10! (most other browser
 - [Replace the Server](#replace-the-server)
 - [Write simple scripts to send and receive messages](#write-simple-scripts-to-send-and-receive-messages)
     - [Note about antipattern](#note-about-antipattern)
+    - [Alternative to older browsers](#alternative-to-older-browsers)
 
 ## Clean up the Project
 First of all we will clean up our project to remove some of the test scripts created in the previous tutorials.
@@ -161,7 +162,7 @@ We will write a simple echo handler, let us change `testapp\ src\ testapp\ route
 
 ;; ...
 
-;; we will need a response to non websocket requests
+;; we will need a response to non WebSocket requests
 
 (def non-websocket-request
   {:status 400
@@ -321,3 +322,14 @@ Note if you write server code take care it is not blocking the thread like:
 
 The used handler within our project accomplishes the same as above, but asynchronously.
 Generally prefer Alephs deferred `chain ` or `let-flow ` over blocking style.
+
+
+### Alternative to older browsers
+What to do if there are not WebSockets available?
+Some developers suggest using flash instead, which is an infamous action. Frequently browsers blocking flash to force people to updates.
+Security officers already stated they would love to delete it permanently of all world, so we will have to look at alternatives.
+One alternative is to wrap [Sente arround the requests](https://github.com/ptaoussanis/sente).
+"Sente is a small client+server library that makes it easy to build reliable, high-performance realtime web applications with Clojure + ClojureScript."
+Which will use Ajax (auto-fallback) to emulate WebSockets by some kind of longtermpolling.
+
+

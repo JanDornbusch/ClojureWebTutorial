@@ -16,7 +16,8 @@
             [try-let :refer [try-let]]
             [noir.session :refer [wrap-noir-session*]]
             [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
-            [clojure.string :refer [includes? join]]))
+            [clojure.string :refer [includes? join]]
+            [clojure.stacktrace :refer [print-throwable print-stack-trace]]))
 ;  (:use [ring.middleware.refresh]
   ;      [clojure.string :refer [includes? join]]))
 
@@ -50,19 +51,20 @@
 
 (def no-log-paths
   "paths which will not show in console-logs"
-  ["/img/" "/css/" "/__source_changed"])
+  ["/img/" "/css/" "/__source_changed" "/js/out/goog/" "/js/out/taoensso/" "/js/out/figwheel/" "/js/out/cljs/" "/js/out/clojure/"])
 (def stripe-nothing-keys
   "keys to remove when no keys are removed"
   [:body])
 (def stripe-keys
   "keys to be removed in smallest logs version"
-  [:body :character-encoding :remote-addr :server-name :server-port :ssl-client-cert :scheme  :content-type  :content-length])
+  [:body :keep-alive? :character-encoding :remote-addr :server-name :server-port :ssl-client-cert :scheme :content-type :content-length :query-string :flash])
 (def stripe-nothing-headers
   "headers to remove when no headers are removed"
   [])
 (def stripe-headers
   "headers to be removed in smallest logs version"
-  ["dnt" "user-agent" "accept" "accept-encoding" "accept-language" "accept-charset" "cache-control" "connection"])
+  ["pragma" "host" "user-agent" "accept" "cache-control" "dnt" "user-agent" "accept" "accept-encoding" "accept-language" "accept-charset" "cache-control" "connection" "sec-websocket-key" "sec-websocket-version" "sec-websocket-extensions" "origin" "cookie"
+])
 
 (defn wrap-log [handler logname with-body keystriper headerstriper no-log-paths url-spy]
   "wrapper to create logs to console"
@@ -71,11 +73,11 @@
     (if (not-any? (fn [x] (includes? (request :uri) x)) no-log-paths) ;; only create full log entry if they are not blacklisted
       (let [incoming (format-logs (str "***** " logname " ***** INcoming request map *****") request keystriper headerstriper false)] ;; There is no body so we cannot log it
         ;; (println incoming) ;; Single message logging
-        (let [response (handler request)]
-          (let [outgoing (format-logs (str "***** " logname " ***** OUTgoing response map *****") response keystriper headerstriper with-body)]
+        (let [response (handler request)
+              outgoing ""] ;(format-logs (str "***** " logname " ***** OUTgoing response map *****") response keystriper headerstriper with-body)]
             ;; (println outgoing) ;; Single message logging
             (println incoming "\n" outgoing) ;; Double message logging
-            response)))
+            response))
     (handler request))))
 
 (defn get-time [toformat]
@@ -84,7 +86,7 @@
       (java.text.SimpleDateFormat.)
       (.format (java.util.Date.))))
 
-(defn write-log [file request response duration ex]
+(defn write-log [efile file request response duration ex]
   "creates logs content and writes it to file (append)"
   (let [log (if (nil? ex)
               (join " " [(get-time "[dd/MM/yyyy:HH:mm:ss Z]")
@@ -102,23 +104,28 @@
                          (request :remote-addr)
                          (request :uri)
                          (.getMessage ex)
+                         (print-throwable ex)
+                         (print-stack-trace ex)
                          "\r\n"]))]
     (try
-      (spit file log :append true)
+      (if (nil? ex)
+        (spit file log :append true)
+        (spit efile log :append true))
       (catch Exception exlog (println "Exception writing logs: " (.getMessage exlog) " Initial error: " log)))))
 
 (defn wrap-log-to-file [handler path]
   "wrapper to create logs to file"
-  (let [file (str path (get-time "yyyy-MM-dd") ".log")] ;; One file per day logging add -HH if you want a new file each hour
+  (let [file (str path (get-time "yyyy-MM-dd") ".log")
+        efile (str path (get-time "yyyy-MM-dd") "-error.log")] ;; One file per day logging add -HH if you want a new file each hour
     (fn [request]
       (make-parents file)
       (let [start (System/currentTimeMillis)]
         (try-let [response (handler request)
                   duration (- (System/currentTimeMillis) start)]
-                 (write-log file request response duration nil)
+                 (write-log efile file request response duration nil)
                  response
                  (catch Exception ex
-                   (write-log file request nil nil ex)))))))
+                   (write-log efile file request nil nil ex)))))))
 
 
 ;; /*****************************ROUTES*********************************************/
@@ -144,5 +151,5 @@
       (wrap-defaults (-> site-defaults
                          (assoc-in [:session :cookie-name] "name_the_cookie")))
       (wrap-base-url)
-      (wrap-log "adapter" false stripe-nothing-keys stripe-nothing-headers no-log-paths true) ;; Show all
+      (wrap-log "adapter" false stripe-keys stripe-headers no-log-paths false) ;; Show all
       (wrap-log-to-file "./logs/")))
