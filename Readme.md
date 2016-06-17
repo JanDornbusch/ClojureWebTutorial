@@ -42,6 +42,7 @@ This tutorial contains the following topics:
 
 ### Part 3 - Livechat (more client side)
 - [x] [Tutorial 19 - Starting with **websockets** using **Aleph**](/tutorial19/)
+- [x] [Tutorial 20 - Sente and events within communication](/tutorial20/)
 - [ ] To be continued
 
 ## Additionals
@@ -54,10 +55,13 @@ In case you are missing information or do not understand what I tried to express
 ### Suggestions / Contribution?
 Please let me know if you are missing anything, if there are security holes, or other improvements I forgot to mention/include. Feel free to help me to improve this tutorial.
 
-### ToDo
+### ToDo / ideacollection
+- Aleph Middlewarefix? (seems working here even without)
 - Adding Apache Logging
 - Stacktrace?
-- Network Protocols
+- Network Protocols?
 - React
 - Buddie or Friend
+- Redis
+- SycllaDB?
 
