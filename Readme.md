@@ -11,6 +11,7 @@ This is not a beginning at 0 tutorial. If you need basic infomation have a look 
 - Clojure #'_::: syntactical suggar [the weird and wonderful characters](https://yobriefca.se/blog/2014/05/19/the-weird-and-wonderful-characters-of-clojure/)
 - HTML [SELFHTML](https://wiki.selfhtml.org/)
 - CSS [W3Schools CSS Tutorial](http://www.w3schools.com/css/default.asp)
+- Comparision [JavaScript how it would look in ClojureScript](https://kanaka.github.io/clojurescript/web/synonym.html)
 
 ## Contents
 Instead of firing big frameworks towards our project we will go mostly step by step through the basics of webdevelopment. I will stick to the order I learned PHP in past and will possible include some sample projects later.
