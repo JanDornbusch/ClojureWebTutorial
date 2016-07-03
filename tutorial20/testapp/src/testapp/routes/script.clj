@@ -35,10 +35,9 @@
   "Multimethod to handle Sente event-msgs available only to users with user ID"
   :id ; Dispatch on event-id
   )
-(defn event-msg-handler
+(defn event-msg-handler [{:as ev-msg :keys [uid]}]
   "Wraps -event-msg-handler with whatever you want to
    we will check the uid here to do see which handler has to be called"
-  [{:as ev-msg :keys [uid]}]
   (if (= uid ::nil-uid)
     (-event-msg-handler ev-msg) ; Handle event-msgs on a single thread
     ;; (future (-event-msg-handler ev-msg)) ; Handle event-msgs on a thread pool
@@ -75,8 +74,8 @@
 
 ;; Catch all else of events without UID (::nil-uid)
 (defmethod -event-msg-handler :default
-  "Default/fallback case (no other matching handler)"
   [{:as ev-msg :keys [event ?reply-fn]}]
+  "Default/fallback case (no other matching handler)"
     (println "Unhandled event: %s" event)
     (when ?reply-fn
       (?reply-fn {:umatched-event-as-echoed-from-server event})))
@@ -85,8 +84,8 @@
 
 
 (defmethod -internal-event-msg-handler :default
-  "Default/fallback case (no other matching handler)"
   [{:as ev-msg :keys [event ?reply-fn]}]
+  "Default/fallback case (no other matching handler)"
     (println "Unhandled internal event: %s" event)
     (when ?reply-fn
       (?reply-fn {:umatched-event-as-echoed-from-server event})))
@@ -98,12 +97,13 @@
 
 (defmethod -internal-event-msg-handler :chsk/uidport-close
   [{:as ev-msg :keys [?data uid]}]
-    ;; this is message of new connection (port opened)
+    ;; this is message of new connection (port closed)
   )
 
 
 (defmethod -internal-event-msg-handler :script/echo
   [{:as ev-msg :keys [?data uid]}]
+    "This is our echo service"
     (println ?data " - " uid)
     (chsk-send! uid [:script/echo {:echo (?data :echo)}]))
 

@@ -70,10 +70,9 @@ User ID could be an unique Number, better an emailaddress or some kind of unique
   "Multimethod to handle Sente event-msgs available only to users with user ID"
   :id ; Dispatch on event-id
   )
-(defn event-msg-handler
+(defn event-msg-handler [{:as ev-msg :keys [uid]}]
   "Wraps -event-msg-handler with whatever you want to
    we will check the uid here to do see which handler has to be called"
-  [{:as ev-msg :keys [uid]}]
   (if (= uid ::nil-uid)
     (-event-msg-handler ev-msg) ; Handle event-msgs on a single thread
     ;; (future (-event-msg-handler ev-msg)) ; Handle event-msgs on a thread pool
@@ -119,8 +118,8 @@ Giving handlers event IDs `(defmethod -internal-event-msg-handler eventID ... ` 
 ;; Next we define the event handlers
 ;; Catch all else of events without UID (::nil-uid)
 (defmethod -event-msg-handler :default
-  "Default/fallback case (no other matching handler)"
   [{:as ev-msg :keys [event ?reply-fn]}]
+  "Default/fallback case (no other matching handler)"
     (println "Unhandled event: %s" event)
     (when ?reply-fn
       (?reply-fn {:umatched-event-as-echoed-from-server event})))
@@ -129,8 +128,8 @@ Giving handlers event IDs `(defmethod -internal-event-msg-handler eventID ... ` 
 
 ;; Catch all of events with UID
 (defmethod -internal-event-msg-handler :default
-  "Default/fallback case (no other matching handler)"
   [{:as ev-msg :keys [event ?reply-fn]}]
+  "Default/fallback case (no other matching handler)"
     (println "Unhandled internal event: %s" event)
     (when ?reply-fn
       (?reply-fn {:umatched-event-as-echoed-from-server event})))
