@@ -1,5 +1,5 @@
 # Tutorial 2 - Prerequirements and creating a simple **hands-on** project
-In this tutorial we will go through the required software to start programming Clojure4Web and let lein create a basic project to us.
+In this tutorial we will go through the required software to start programming Clojure4Web and let lein create a basic project structure to be edited later.
 
 - [Lein](#lein)
 - [Lighttable](#lighttable)
@@ -11,14 +11,15 @@ For now we will use the [Lein tool to build](http://leiningen.org/) our projects
 
 Follow the intallation tutorial at leiningen page. Go to command prompt (on Windows `Ctrl+R` enter `cmd` and press `enter` ). With `lein help` and you can see mostly all available commands. To complete the installation of lein enter `lein self-install` and let it run (you need an active internet connection and allow lein to pass your firewall to download all files and complete installation).
 
-To test the successfull installation you could start a new repl `lein repl` and start to play with it `(+ 1 1) => 2`.
+To test the successfull installation you could start a new repl `lein repl` and start to play with it `(+ 1 1) => 2` where you only entered `(+ 1 1)`.
 
 Alternatively you could use boot ([http://boot-clj.com/](http://boot-clj.com/)) to build projects. For now I will only show how to use lein. Maybe and only if requested or someone contributes it :P I might add the alternatives too.
 
-In case you run a Lein command and get an error like Line does not know it, it is probably a forgotten line within the `project.clj -> :dependencies or :plugins`.
+In case you run a Lein command and get an error like Line does not recognize it, it is probably a forgotten line within the `project.clj -> :dependencies or :plugins`.
 
 ## Lighttable
-[Ligth table](http://lighttable.com/) is a really nice project of code editor. Even if it is developed a little slow (as nearly all kickstartet projects do) it has some nice ideas behind.
+[Ligth table](http://lighttable.com/) is a really nice project of code editor. Even if it is developed a little slow (as nearly all kickstartet projects do) it has some nice ideas behind. It seems to be a little dead right now.
+An alternative will follow.
 
 Emacs users can continue at a later tutorial and stay with their preferred editor as well.
 
@@ -90,6 +91,9 @@ The complete "User behaviors" would look like this now:
 
 
 ```
+
+## VS Code
+Since the Plugins got better....
 
 ## First project
 To create a basic project go back to command prompt and change to the folder where you want to create the project. This can be done by `cd <folder or ..>` and entry of `c: or d:` to change the used partition or folder (more about this can be found at command prompt tutorials).

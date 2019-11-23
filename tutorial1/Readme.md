@@ -79,7 +79,7 @@ The following codeblock shows how a map can look (directly after adapters), you 
 ```
 ### Request before handler
 
-after running the middleware the following map is given to the handlers:
+after running the middleware, a few fields are consumed and the following map is given to the handlers:
 
 ```clojure
 {:ssl-client-cert nil,
@@ -114,6 +114,19 @@ after your handlers the map might look like this:
 
 ```clojure
 {:status 200,
+ :headers {"Content-Type" "text/html; charset=utf-8"},
+ :body
+ "<!DOCTYPE html>\n<html><head><title>Welcome to guestbook</title><link href=\"/css/screen.css?1456142313861\" rel=\"stylesheet\" type=\"text/css\"></head><body><h1>Guestbook</h1><p>Welcome to my guestbook</p><ul class=\"guests\"><li><blockquote>test</blockquote><p>-<cite>test</cite></p><time>19/01/2016</time></li></ul><hr><p></p><form action=\"/\" method=\"POST\"><input id=\"__anti-forgery-token\" name=\"__anti-forgery-token\" type=\"hidden\" value=\"KX0lLYpJtWoDVVHuErth9FQZPTj58iuSLNt9fPrDORPyzWVgZw4y7fZq1gVmEjE2c2FXP90/kVBxhwyn\" /><p>Name</p><input id=\"name\" name=\"name\" type=\"text\"><p>Message</p><textarea cols=\"40\" id=\"message\" name=\"message\" rows=\"10\"></textarea><br><input type=\"submit\" value=\"comment\"></form></body></html>"}
+
+```
+
+It's a basic answer, containing the status code explained further down this page, basic headers and the html content.
+
+### Response before adapters
+and finally what the adapters get:
+
+```clojure
+{:status 200,
  :headers
  {"Content-Type" "text/html; charset=utf-8",
   "X-XSS-Protection" "1; mode=block",
@@ -124,16 +137,7 @@ after your handlers the map might look like this:
 
 ```
 
-### Response before adapters
-and finally what the adapters get:
-
-```clojure
-{:status 200,
- :headers {"Content-Type" "text/html; charset=utf-8"},
- :body
- "<!DOCTYPE html>\n<html><head><title>Welcome to guestbook</title><link href=\"/css/screen.css?1456142313861\" rel=\"stylesheet\" type=\"text/css\"></head><body><h1>Guestbook</h1><p>Welcome to my guestbook</p><ul class=\"guests\"><li><blockquote>test</blockquote><p>-<cite>test</cite></p><time>19/01/2016</time></li></ul><hr><p></p><form action=\"/\" method=\"POST\"><input id=\"__anti-forgery-token\" name=\"__anti-forgery-token\" type=\"hidden\" value=\"KX0lLYpJtWoDVVHuErth9FQZPTj58iuSLNt9fPrDORPyzWVgZw4y7fZq1gVmEjE2c2FXP90/kVBxhwyn\" /><p>Name</p><input id=\"name\" name=\"name\" type=\"text\"><p>Message</p><textarea cols=\"40\" id=\"message\" name=\"message\" rows=\"10\"></textarea><br><input type=\"submit\" value=\"comment\"></form></body></html>"}
-
-```
+Here the middleware added security configuration. It's possible there will be added more headers to the response to the client.
 
 ### Request keys explained
 What does all this key-values mean? I think the best about that is to look at the most recent version at [Ring SPECs page](https://github.com/ring-clojure/ring/blob/master/SPEC).
@@ -188,6 +192,9 @@ Middleware is an interesting topic worth a deeper look. All requests go through 
       (other_fn response)
       response)))
 ```
+
+With easy words it's like execute and perform data manipulation before the handler is called. Handlers could be other middleware or the function delivering the page. And after this go reverse the way and clean up (do further manipulation of data).
+
 
 ## Handler
 

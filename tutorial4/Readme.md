@@ -41,6 +41,11 @@ The above mentioned methode can be usefull but an automatic server start loop wo
 1. To evaluate blocks use `Cmd/Ctrl+Enter ` by default
 2. and in case you want to evaluate an entire file, this is bound to `Cmd/Ctrl+Shift+Enter `.
 
+### NEW Evaluation VSCode
+
+When using calva and VSCode you might press `Ctrl+Alt+C ` followed by  `Ctrl+Alt+J ` to open the REPL startup. It will promt you to choose a proiofie which in most cases will be `:dev ` followed by pressing ok. The REPL will start up. The new tab lets you evaluate all you enter. 
+Inside codefiles you can eval the current form with `Ctrl+Alt+C ` followed by `V `. If you want to search a command in VSCode you can use `Ctrl+Shift+P ` to do so. If you are in Calva REPL you can navigate the history of commands up and down with `Alt+Up/Down `.
+
 ### Run it
 To run the server use the `startup.clj ` file and evaluate both lines. If you forget to load the namespace with the first line you will get an exception
 ```clojure

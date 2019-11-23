@@ -22,7 +22,7 @@ Starting to change the project file `testapp\ project.clj ` :
 
 ```clojure
 ;; dependencies extended by:
-                 [com.taoensso/sente "1.9.0-beta2"] ;; Dev -unstable- but first with Aleph integration
+                 [com.taoensso/sente "1.14.0"] 
 ```
 
 Within `testapp\ src\ testapp\ routes\ script.clj ` we will have to add a function prepares the WebSockets wrapper which will handle both Ajax and WebSockets calls.
@@ -170,7 +170,7 @@ Next changes happen in `testapp\ src\ testapp\ repl.clj ` , we will add a router
 ;; requires are extended by:
                  [testapp.routes.script :refer [start-router! stop-router!]]
 
-;; within startup-server (after reser! / before (try..)) add
+;; within startup-server (after reset! / before (try..)) add
     (start-router!)
 ;; this is only required in case we restart the server (router beeing stopped and has to be started again)
 

@@ -6,7 +6,7 @@
 
 (deftest test-app
   (testing "main route"
-    (let [response (app (request :get "/"))]
+    (let [response (app (request :get "/guestbook"))]
       (is (= (:status response) 200))
       (is (.contains (:body response) "Guestbook"))))
 

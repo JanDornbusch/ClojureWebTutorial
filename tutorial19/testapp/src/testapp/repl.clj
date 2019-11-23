@@ -39,5 +39,5 @@
   (when @server
     ;; when adds a do here
     (println "Stopping the server")
-    (@server)
+    (.close @server)
     (reset! server nil)))

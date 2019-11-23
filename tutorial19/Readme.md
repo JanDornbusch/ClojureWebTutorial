@@ -110,7 +110,7 @@ Next modifications are within the server start and stop functions `testapp\ src\
   (when @server
     ;; when adds a do here
     (println "Stopping the server")
-    (@server)
+    (.close @server)
     (reset! server nil)))
 
 ```

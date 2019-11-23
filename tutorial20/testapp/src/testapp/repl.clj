@@ -42,5 +42,5 @@
     ;; when adds a do here
     (println "Stopping the server")
     (stop-router!)
-    (@server)
+    (.close @server)
     (reset! server nil)))

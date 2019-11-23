@@ -1,34 +1,34 @@
 (defproject testapp "0.1.0-SNAPSHOT"
   :description "FIXME: write description"
   :url "http://example.com/FIXME"
-  :dependencies [[org.clojure/clojure "1.8.0"]
+  :dependencies [[org.clojure/clojure "1.10.1"]
                  ;; Server
-                 [aleph "0.4.1"]
-                 [com.taoensso/sente "1.9.0-beta2"] ;; Dev -unstable- but first with Aleph integration
+                 [aleph "0.4.6"]
+                 [com.taoensso/sente "1.14.0"]
                  ;; Route handling
-                 [compojure "1.4.0"]
+                 [compojure "1.6.1"]
                  ;; Templating
                  [hiccup "1.0.5"]
                  [hiccups "0.3.0"]
                  ;; JDBC dependencies
-                 [org.clojure/java.jdbc "0.4.2"]
-                 [org.xerial/sqlite-jdbc "3.8.11.2"]
+                 [org.clojure/java.jdbc "0.7.10"]
+                 [org.xerial/sqlite-jdbc "3.28.0"]
                  ;; CSS
-                 [garden "1.3.2"]
+                 [garden "1.3.9"]
                  ;; let-try ... catch
-                 [try-let "1.1.0"]
+                 [try-let "1.3.1"]
                  ;; CSRF
-                 [ring/ring-defaults "0.2.0"]
-                 [ring/ring-anti-forgery "1.0.1"]
+                 [ring/ring-defaults "0.3.2"]
+                 [ring/ring-anti-forgery "1.3.0"]
                  ;; Sessions
                  [lib-noir "0.9.9"]
                  ;; ClojureScript
-                 [org.clojure/clojurescript "1.8.51"]]
-  :plugins [[lein-ring "0.9.7"]
-            [lein-garden "0.2.6"]
+                 [org.clojure/clojurescript "1.10.597"]]
+  :plugins [[lein-ring "0.12.5"]
+            [lein-garden "0.2.7"]
             [quickie "0.4.2"]
-            [lein-cljsbuild "1.1.3"]
-            [lein-figwheel "0.5.3-2"]]
+            [lein-cljsbuild "1.1.7"]
+            [lein-figwheel "0.5.19"]]
   :cljsbuild {:builds
               [{:id "app"
                 :source-paths ["scripts"]
@@ -71,6 +71,6 @@
    {:ring
     {:open-browser? false, :stacktraces? false, :auto-reload? false}}
    :dev
-   {:dependencies [[ring/ring-mock "0.3.0"]
-                   [ring/ring-devel "1.4.0"]
+   {:dependencies [[ring/ring-mock "0.4.0"]
+                   [ring/ring-devel "1.8.0"]
                    [ring-refresh "0.1.2"]]}})
