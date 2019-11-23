@@ -15,9 +15,18 @@
 
 ;; ############################################## Socket Logic ###############################################
 
+(def ?csrf-token
+  (when-let [el (.getElementById js/document "sente-csrf-token")]
+    (.getAttribute el "data-csrf-token")))
+
+(if ?csrf-token
+  (->output! "CSRF token detected in HTML, great!")
+  (->output! "CSRF token NOT detected in HTML, default Sente config will reject requests"))
+
 (let [{:keys [chsk ch-recv send-fn state]}
         (sente/make-channel-socket-client! "/chsk" ; Must match server Ring routing URL
-        {})]
+                                           ?csrf-token ; NEW!!! https://github.com/ptaoussanis/sente/blob/master/CHANGELOG.md#breaking-changes
+                                           {})]
 
   (def chsk       chsk)
   (def ch-chsk    ch-recv) ; ChannelSocket's receive channel

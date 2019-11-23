@@ -36,6 +36,8 @@ User ID could be an unique Number, better an emailaddress or some kind of unique
 [taoensso.sente :as sente]
 [taoensso.sente.server-adapters.aleph :refer (get-sch-adapter)]
 [noir.session :as session]
+[hiccup.form :refer [hidden-field]]         
+[ring.middleware.anti-forgery :refer [*anti-forgery-token*]]
 
 ;; add an atom to hold our message router
 (defonce router_ (atom nil))
@@ -53,6 +55,12 @@ User ID could be an unique Number, better an emailaddress or some kind of unique
        [:br]
        [:lable "Console:"]
        [:textarea#output {:style "width: 100%; height: 200px;"}]
+       ;; Newest version of sente requires a token!
+       (let [csrf-token
+          ;; (:anti-forgery-token ring-req) ; Also an option
+            (force *anti-forgery-token*)]
+
+          [:div#sente-csrf-token {:data-csrf-token csrf-token}])
        [:script {:src "/js/app.js"}]]]))
 
 ;; remove
@@ -207,10 +215,20 @@ We will remove goog just for fun and use only Sente and JavaScript interop.
 ```clojure
 ;; ############################################## Socket Logic ###############################################
 
+;; Logic to get the csrf-token
+(def ?csrf-token
+  (when-let [el (.getElementById js/document "sente-csrf-token")]
+    (.getAttribute el "data-csrf-token")))
+
+(if ?csrf-token
+  (->output! "CSRF token detected in HTML, great!")
+  (->output! "CSRF token NOT detected in HTML, default Sente config will reject requests"))
+
 ;; Here we creating our WebSocket/Ajax emulation targeting our Server with /chsk path!
 ;; Do not use a full qualified address here as Sente currently ony takes a path and does the rest!
 (let [{:keys [chsk ch-recv send-fn state]}
         (sente/make-channel-socket-client! "/chsk" ;; Must match server Ring routing URL
+        ?csrf-token ; NEW!!! https://github.com/ptaoussanis/sente/blob/master/CHANGELOG.md#breaking-changes
         {})]
 
   (def chsk       chsk)

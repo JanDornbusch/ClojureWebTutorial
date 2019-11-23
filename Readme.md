@@ -43,8 +43,8 @@ This tutorial contains the following topics:
 
 ### Part 3 - Livechat (more client side)
 - [x] [Tutorial 19 - Starting with **websockets** using **Aleph**](/tutorial19/)
-- [x] [Tutorial 20 - Sente and events within communication](/tutorial20/) (Currently broken, needs to be updated)
-- [ ] To be continued
+- [x] [Tutorial 20 - Sente and events within communication](/tutorial20/)
+- [ ] To be continued 
 
 ## Additionals
 ### Missing explanations?

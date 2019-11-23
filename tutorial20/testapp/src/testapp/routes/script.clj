@@ -6,7 +6,9 @@
             [manifold.deferred :as d]
             [manifold.bus :as bus]
             [taoensso.sente :as sente]
-            [taoensso.sente.server-adapters.aleph :refer (get-sch-adapter)]
+            [taoensso.sente.server-adapters.aleph :refer (get-sch-adapter)]   
+            [hiccup.form :refer [hidden-field]]         
+            [ring.middleware.anti-forgery :refer [*anti-forgery-token*]]
             [noir.session :as session]))
 
 (defonce router_ (atom nil))
@@ -22,6 +24,11 @@
        [:br]
        [:lable "Console:"]
        [:textarea#output {:style "width: 100%; height: 200px;"}]
+       (let [csrf-token
+          ;; (:anti-forgery-token ring-req) ; Also an option
+            (force *anti-forgery-token*)]
+
+          [:div#sente-csrf-token {:data-csrf-token csrf-token}])
        [:script {:src "/js/app.js"}]]]))
 
 
